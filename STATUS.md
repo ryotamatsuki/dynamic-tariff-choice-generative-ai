@@ -6,17 +6,17 @@ Last synchronized: 2026-09-12 (JST)
 
 - Workflow: `ryotamatsuki/research-paper-workflow` v2.1
 - Stage 7.5: **GO**
-- Stage 7.5A: **CONDITIONAL GO**
-- Stage 8: **BLOCKED**
-- Single blocker: obtain a successful Lean kernel-checked build and close statement-fidelity / axiom / placeholder audit on the frozen theorem set.
+- Stage 7.5A: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**
+- Formal Verification Gate: **FORMAL VERIFICATION PASS**
+- Stage 8 Canonical Theory Freeze: **AUTHORIZED, NOT YET EXECUTED**
 
 ## Canonical roles
 
-- This repository: canonical mathematical, verification, and formal-artifact source from repository initialization onward.
+- This repository: canonical mathematical, verification, theorem-certificate, and formal-artifact source from repository initialization onward.
 - `ryotamatsuki/economic-theory-research-portfolio#30`: portfolio stage/status SSOT and historical execution record.
 - Historical pre-repository Stage reports remain preserved in the central portfolio; they are provenance inputs, not competing current sources.
 
-## Frozen theorem scope entering Stage 7.5A
+## Scope-certified theorem package
 
 ### Baseline theorem
 
@@ -52,6 +52,10 @@ Classification: **SUFFICIENT-CONDITION THEOREM**, not a general theorem over all
 - Strict concavity alone is not certified to imply state ordering or monotone metering gain.
 - The fixed-installed-base welfare wedge is not a global endogenous-welfare ranking.
 
+## Formal verification certificate
+
+A targeted Lean 4 proof-critical core builds successfully under the pinned Lean 4.33.1 / mathlib v4.33.1 toolchain. CI also passes the no-`sorry`/`admit` audit. The formal scope is bounded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md` and does not claim verification of the complete economic model.
+
 ## Immediate next action
 
-Close the Formal Verification Gate only. No theory extension is authorized before Stage 8.
+Run **Stage 8 — Canonical Theory Freeze**. No extension should be introduced before the freeze decision is recorded.
