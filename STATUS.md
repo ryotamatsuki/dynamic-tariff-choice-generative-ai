@@ -31,6 +31,8 @@ Recommended next manuscript title after repaired theory is refrozen: **Dynamic T
 
 Journal positioning after repair: **IJIO remains a plausible but demanding first target; JIE is not the preferred target at the current scope.** The main publication risk is perceived narrowness, not an unresolved mathematical defect inside the certified claim set.
 
+Stage 7.5A receives the repaired Stage-4R/4A records, exact theorem certificates, Stage-6 novelty record, repaired Stage-7 welfare/generality record, Stage-4A and Stage-7 verification scripts, Stage-11B nonquadratic/counterexample evidence, and the existing Lean source as a conditional algebraic artifact pending renewed statement-fidelity certification.
+
 The old Stage-8 freeze, prior Stage-7.5/7.5A certificates, and Stage-10 manuscript remain **stale for routing purposes**.
 
 Next authorized action: **Stage 7.5A — Generality / Quantifier Red-Team and renewed formal-fidelity gate**. A new Stage-8 freeze remains blocked until Stage 7.5A passes.
