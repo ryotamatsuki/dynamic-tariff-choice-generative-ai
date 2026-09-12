@@ -2,7 +2,7 @@
 
 \subsection{Continuation pricing on the certified both-served branch}
 
-Fix an installed state $(l,h)$ in the candidate interval covered by strict $\mathcal R^+$. Weak participation at zero surplus allows the provider to set
+Fix an installed state $(l,h)$ in the candidate interval derived in Section~\ref{sec:model} and covered by strict $\mathcal R^+$. Weak participation at zero surplus allows the provider to set
 \begin{equation}
  F=S_L(p)=\frac{(a_L-p)^2}{2},
  \label{eq:Fbind}
@@ -14,19 +14,19 @@ while serving both classes. Type $L$ then receives zero continuation utility and
 \end{equation}
 Under flat pricing, $p=0$ and type $H$ receives $R_F$.
 
-Differentiating the both-served metered profit in \eqref{eq:metered-profit} gives
+The global continuation proof is given in Appendix~\ref{app:proofs}; it does not rely on an interior FOC alone. Conditional on both types being served, differentiation gives
 \begin{equation}
  \frac{\partial \Pi_M^B}{\partial p}=dh-(l+h)(p-c),
  \qquad
- \frac{\partial^2 \Pi_M^B}{\partial p^2}=-(l+h)<0.
+ \frac{\partial^2 \Pi_M^B}{\partial p^2}=-(l+h)<0,
  \label{eq:metered-FOC-SOC}
 \end{equation}
-Hence the unique interior both-served optimum is
+and the exact square-loss identity in the Appendix establishes the global both-served optimum
 \begin{equation}
  p^*(h)=c+d\frac{h}{l+h}.
  \label{eq:pstar}
 \end{equation}
-Condition \eqref{eq:Rplus4} keeps this price below $a_L$ over the candidate interval. The remaining $\mathcal R^+$ conditions ensure that the both-served continuation is also the provider's global continuation optimum against $H$-only and no-service alternatives on that interval.
+Condition \eqref{eq:Rplus4} keeps this price strictly between zero and $a_L$ over the complete candidate interval. The remaining $\mathcal R^+$ conditions, together with the active-set comparison in the Appendix, make the both-served continuation the provider's global continuation optimum on that interval.
 
 The gross profit advantage of optimized metering over optimized flat pricing on this branch is
 \begin{equation}
@@ -73,7 +73,7 @@ For every parameter vector in strict $\mathcal R^+$, equation \eqref{eq:hMfixedp
 
 The first inequality is substantive after the continuation repair: metering leaves the high-use class positive continuation rent on the certified both-served branch, while the second follows because metering reduces that rent relative to flat pricing. The proof in Appendix~\ref{app:proofs} uses the strict fixed-point crossing implied by $\mathcal R^+$.
 
-\subsection{Threshold separation and the pure-regime gap}
+\subsection{Threshold separation, boundary equilibria, and the pure-regime gap}
 
 Define the expectation-contingent architecture thresholds
 \begin{equation}
@@ -93,7 +93,17 @@ For every parameter vector in strict $\mathcal R^+$,
 
 This is the central state-feedback comparison: anticipated architecture changes the installed state, and the provider's gross metering gain is strictly ordered in that state. The abstract implication ``ordered states plus an increasing gain map imply ordered thresholds'' is only an organizing lemma; the economic content of Proposition~\ref{prop:T2} comes from the primitive derivation of both orderings in the quadratic baseline.
 
-Under a metered expectation the provider evaluates architecture at $h_M$, so metering is self-consistent only when $\mu<\mu_M$. Under a flat expectation it evaluates architecture at $h_F$, so flat pricing is self-consistent only when $\mu>\mu_F$.
+Under a pure metered expectation the provider evaluates architecture at $h_M$. Because provider indifference is allowed, the pure metered outcome is self-consistent if and only if
+\begin{equation}
+ \mu\leq\mu_M.
+ \label{eq:metered-pure-condition}
+\end{equation}
+Under a pure flat expectation it evaluates architecture at $h_F$, so the pure flat outcome is self-consistent if and only if
+\begin{equation}
+ \mu\geq\mu_F.
+ \label{eq:flat-pure-condition}
+\end{equation}
+At $\mu=\mu_M$ the aggregate pure equilibrium has $h=h_M$ and metering probability $\rho=1$; at $\mu=\mu_F$ it has $h=h_F$ and $\rho=0$. Provider indifference at those states does not make every mixing probability aggregate-consistent: any $\rho<1$ at $\mu_M$ raises high-use integration above $h_M$, making metering strictly optimal, while any $\rho>0$ at $\mu_F$ lowers high-use integration below $h_F$, making flat pricing strictly optimal. Appendix~\ref{app:proofs} gives the formal best-response and aggregation argument.
 
 \begin{proposition}[Pure-regime gap]\label{prop:T3}
 For every parameter vector in strict $\mathcal R^+$ and every $\mu$ satisfying
@@ -101,7 +111,7 @@ For every parameter vector in strict $\mathcal R^+$ and every $\mu$ satisfying
  \mu_M<\mu<\mu_F,
  \label{eq:strict-gap}
 \end{equation}
-neither pure flat nor pure metered expectation is self-consistent. On the certified branch there is a unique aggregate mixed resolution $(h^*,\rho^*)$ with $h_M<h^*<h_F$.
+neither pure flat nor pure metered expectation is self-consistent. On the certified branch there is a unique aggregate mixed resolution $(h^*,\rho^*)$ with $h_M<h^*<h_F$ and $0<\rho^*<1$.
 \end{proposition}
 
 The mixed state is the unique solution to
@@ -109,18 +119,27 @@ The mixed state is the unique solution to
  \Phi(l,h^*)=\mu.
  \label{eq:hstar}
 \end{equation}
-At $h^*$ the provider is indifferent between architectures. If it meters with probability $\rho$, expected high-use continuation rent is $R_F-\rho d p^*(h^*)$, so aggregate integration requires
+At $h^*$ the provider is indifferent between the two \emph{actual globally optimal tariffs}: the flat both-served tariff $(F,p)=(a_L^2/2,0)$ and the metered both-served tariff $(F,p)=(S_L(p^*(h^*)),p^*(h^*))$. The provider randomizes between these tariffs, and $\rho$ denotes the probability that the metered tariff is realized. Users integrate before that randomization and therefore compare expected realization-contingent continuation utilities; they do not choose future quantities at an average price.
+
+If the provider meters with probability $\rho$, expected high-use continuation rent is $R_F-\rho d p^*(h^*)$, so aggregate integration requires
 \begin{equation}
  \rho^*=\frac{K_H(h_F-h^*)}{d\,p^*(h^*)},
  \qquad 0<\rho^*<1.
  \label{eq:rhostar}
 \end{equation}
-Equality cases $\mu=\mu_M$ and $\mu=\mu_F$ are excluded from the strict proposition because the provider is then indifferent at a pure induced state.
+A strategy construction is
+\begin{equation}
+ x_L(k)=\mathbf 1\{k\leq b_L\},
+ \qquad
+ x_H(k)=\mathbf 1\{k\leq b_H+R_F-\rho^*d p^*(h^*)\}.
+ \label{eq:integration-strategies}
+\end{equation}
+Under the uniform cost distributions these cutoffs aggregate to $l=b_L/K_L$ and $h=h^*$. A single atomless user's deviation does not change $(l,h)$ and therefore does not alter the provider's continuation problem. At off-path installed states the provider follows the global continuation values $V_F$ and $V_M$ in Section~\ref{sec:model}, mixing only at a tie. The uniqueness claim in Proposition~\ref{prop:T3} is intentionally aggregate: measure-zero cutoff behavior and off-path tie-breaking need not be unique, and no independent mixing by the continuum of users is required.
 
 \begin{figure}[ht]
   \centering
   \input{../figures/threshold_phase.tex}
-  \caption{Two self-consistency thresholds in the frozen exact example. The middle interval is the strict pure-regime gap for this certified parameterization. The numerical endpoints are illustrative; Propositions~\ref{prop:T1}--\ref{prop:T3} are quantified only on strict $\mathcal R^+$.}
+  \caption{Two self-consistency thresholds in the frozen exact example. Pure metering is self-consistent through the left endpoint $\mu_M$, pure flat pricing is self-consistent from the right endpoint $\mu_F$, and only the open middle interval is the mixed pure-regime gap. The numerical endpoints are illustrative; Propositions~\ref{prop:T1}--\ref{prop:T3} are quantified only on strict $\mathcal R^+$.}
   \label{fig:threshold-phase}
 \end{figure}
 
