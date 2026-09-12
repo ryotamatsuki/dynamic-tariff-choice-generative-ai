@@ -43,6 +43,8 @@ Recommended title after repaired theory is refrozen: **Dynamic Tariff Choice for
 
 Journal positioning: **IJIO remains a plausible but demanding first target; JIE is not preferred at the repaired scope.** The main risk is that a referee views the interaction theorem as too narrow relative to the hold-up/commitment literature.
 
+Stage 7.5A receives the repaired Stage-4R/4A records, exact theorem certificates, Stage-6 novelty record, repaired Stage-7 welfare/generality record, Stage-4A and Stage-7 verification scripts, Stage-11B nonquadratic/counterexample evidence, and the existing Lean source as a conditional algebraic artifact pending renewed statement-fidelity certification.
+
 ## Current canonical records
 
 - `docs/STAGE_04R_REPAIR.md`
