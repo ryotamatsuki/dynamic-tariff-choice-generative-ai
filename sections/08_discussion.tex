@@ -1,0 +1,21 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{What the threshold gap means}
+
+The interval $(\mu_M,\mu_F)$ is not a region in which the provider mechanically prefers one tariff and users mechanically prefer another. It is a self-consistency failure for pure expectations. If users expect metering, high-use integration is low enough that the provider no longer wants to pay the activation cost when $\mu>\mu_M$. If users instead expect flat pricing, high-use integration is high enough that the provider wants to activate metering when $\mu<\mu_F$. The mixed regular-branch equilibrium aligns the installed state with the provider's indifference condition.
+
+This distinction matters for empirical interpretation. A static estimation exercise that observes only the provider's payoff difference at one installed base identifies an object like $\Phi(l,h)$, not the pair of self-consistency thresholds. Recovering the dynamic mechanism would require information on how integration responds to expected tariff architecture and how the provider's architecture incentive responds to the resulting installed composition.
+
+\subsection{Comparative implications}
+
+The collapse benchmark gives the cleanest comparative implication. Environments in which integration is effectively exogenous, reversible, or insensitive to expected marginal pricing should exhibit little or no separation between architecture-induced thresholds. By contrast, the mechanism becomes relevant when high-use integrations are both sunk and sensitive to the future marginal price. This is an implication of the model's ordering logic, not an empirical claim about the size of the effect in any particular AI market.
+
+The model also gives a conditional way to think about service improvement. Suppose an exogenous quality index changes primitives so that both $\mu_M$ and $\mu_F$ move monotonically upward while the real metering activation cost remains approximately fixed. Then the same service can pass from a flat self-consistent region, through the mixed interval, and into a metered self-consistent region. This interpretation is useful for thinking about evolving AI services, but the baseline does not prove the required monotonicity for arbitrary quality changes. In particular, changes in model capability can affect willingness to pay, usage composition, inference cost, and integration incentives in different ways.
+
+\subsection{Welfare and policy interpretation}
+
+The exact wedge in Proposition~\ref{prop:W1} identifies one source of misalignment: holding the installed base fixed, the provider internalizes revenue effects of a positive marginal price that do not coincide with real surplus. The result is nevertheless insufficient for a policy prescription because architecture also changes integration. The full endogenous welfare comparison can reverse within the baseline family. Any intervention aimed at tariff architecture would therefore need evidence on the integration response rather than relying only on the fixed-base pricing distortion.
+
+\subsection{Limitations}
+
+Several omissions are deliberate. The provider is a monopolist; there is no capacity constraint or congestion; tariffs are anonymous and restricted to the two-part family; integration has only two future-value classes; and the regular branch requires both classes to be globally served by the relevant continuation tariffs. Richer screening, competition, committed-spend contracts, capacity management, or endogenous model investment may alter the equilibrium correspondence. Those mechanisms are not needed for the present threshold-separation result and are therefore left outside the frozen baseline rather than added as unverified extensions.

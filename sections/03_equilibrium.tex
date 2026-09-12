@@ -1,16 +1,155 @@
 \section{Equilibrium and Tariff Architecture}\label{sec:equilibrium}
-\emph{Stage 10 writing placeholder.} Proposition statements must match the frozen quantifiers and the regular both-served region restrictions.
+
+\subsection{Continuation pricing for a fixed installed base}
+
+Fix an installed state $(l,h)$ in the regular both-served region. Because $a_H>a_L$, any common tariff that keeps type $L$ participating also keeps type $H$ participating. On the both-served branch, the provider sets the fixed fee at the $L$ participation constraint,
+\begin{equation}
+ F=S_L(p)=\frac{(a_L-p)^2}{2}.
+ \label{eq:Fbind}
+\end{equation}
+The high-use class then retains continuation rent
+\begin{equation}
+ R_H(p)=S_H(p)-S_L(p)=R_F-dp.
+ \label{eq:Hrent}
+\end{equation}
+
+Under the flat architecture, $p=0$, so
+\begin{equation}
+ F_F=\frac{a_L^2}{2}
+ \label{eq:flat-fee}
+\end{equation}
+and class $H$ receives rent $R_F$.
+
+Under the metered architecture, gross provider profit before the activation cost is
+\begin{equation}
+ \Pi_M(p\mid l,h)
+ =(l+h)\frac{(a_L-p)^2}{2}
+ +(p-c)\left[l(a_L-p)+h(a_H-p)\right].
+ \label{eq:metered-profit}
+\end{equation}
+The first-order condition on the regular interior branch is
+\begin{equation}
+ (l+h)(c-p)+dh=0,
+ \end{equation}
+which yields
+\begin{equation}
+ p^*(h)=c+d\frac{h}{l+h}.
+ \label{eq:pstar}
+\end{equation}
+The corresponding fixed fee is $F_M=S_L(p^*)$. Direct substitution shows that the gross profit advantage of metering over the optimized flat continuation is
+\begin{equation}
+ \Phi(l,h)
+ \equiv \Pi_M(p^*(h)\mid l,h)-\Pi_F(l,h)
+ =\frac{l+h}{2}\left(c+d\frac{h}{l+h}\right)^2.
+ \label{eq:Phi}
+\end{equation}
+The provider therefore chooses the metered architecture at state $(l,h)$ when $\Phi(l,h)>\mu$, chooses flat when $\Phi(l,h)<\mu$, and is indifferent at equality.
+
+The crucial comparative static is that $\Phi$ is increasing in the installed high-use mass. Differentiating gives
+\begin{equation}
+ \frac{\partial\Phi(l,h)}{\partial h}
+ =\frac{[c(l+h)+dh][c(l+h)+dh+2dl]}{2(l+h)^2}>0.
+ \label{eq:Phi-derivative}
+\end{equation}
+Thus the provider has a stronger incentive to meter when a larger high-use installed base is already present.
+
+\subsection{Architecture-sensitive integration}
+
+Because the fixed fee extracts the continuation surplus of class $L$ on the regular branch, its integration decision depends only on the current benefit. Hence
+\begin{equation}
+ l=\frac{b_L}{K_L}.
+ \label{eq:lstate}
+\end{equation}
+For class $H$, future rent depends on the anticipated architecture.
+
+If users expect flat pricing, the high-use integration cutoff is $b_H+R_F$, giving
+\begin{equation}
+ h_F=\frac{b_H+R_F}{K_H}.
+ \label{eq:hF}
+\end{equation}
+If users expect metering, class $H$ anticipates the rent in \eqref{eq:Hrent} evaluated at the provider's future metered optimum. The rational-expectations state $h_M$ therefore solves
+\begin{equation}
+ K_H h=b_H+R_F-d\left(c+d\frac{h}{l+h}\right).
+ \label{eq:hMfixedpoint}
+\end{equation}
+
+\begin{proposition}[Integration ordering]\label{prop:T1}
+For every parameter vector in the certified regular region $\mathcal R$, equation \eqref{eq:hMfixedpoint} has a unique solution satisfying
+\begin{equation}
+ 0<h_M<h_F.
+ \label{eq:T1}
+\end{equation}
+\end{proposition}
+
+The economic reason is simple. Relative to flat pricing, metering lowers the high-use class's continuation rent by $dp^*(h)>0$. Because integration is sunk before repricing, that lower expected rent reduces the installed mass. The uniqueness statement is branch-specific: the left side of \eqref{eq:hMfixedpoint} is strictly increasing while the right side is strictly decreasing on the relevant interval, with the endpoint inequalities supplied by $\mathcal R$.
+
+\subsection{Threshold separation and the pure-regime gap}
+
+Evaluate the provider's metering gain at the architecture-induced states:
+\begin{equation}
+ \mu_M\equiv\Phi(l,h_M),
+ \qquad
+ \mu_F\equiv\Phi(l,h_F).
+ \label{eq:mu-thresholds}
+\end{equation}
+
+\begin{proposition}[Threshold separation]\label{prop:T2}
+For every parameter vector in $\mathcal R$,
+\begin{equation}
+ \mu_M<\mu_F.
+ \label{eq:T2}
+\end{equation}
+\end{proposition}
+
+Proposition~\ref{prop:T2} follows immediately from Proposition~\ref{prop:T1} and the strict monotonicity in \eqref{eq:Phi-derivative}. The result is an order statement: anticipated architecture changes the state, and the provider's architecture gain is ordered in that state.
+
+The distinction between the two thresholds matters because each pure expectation must be checked at the state that the expectation itself induces. Under a metered expectation, the provider sees $h_M$ and therefore wishes to meter only if $\mu<\mu_M$. Under a flat expectation, it sees $h_F$ and wishes to remain flat only if $\mu>\mu_F$.
+
+\begin{proposition}[Pure-regime gap]\label{prop:T3}
+Take a strict parameter vector in $\mathcal R$ and exclude the equality boundaries $\mu=\mu_M$ and $\mu=\mu_F$.
+\begin{enumerate}
+ \item If $\mu<\mu_M$, the metered pure expectation is self-consistent on the regular branch.
+ \item If $\mu>\mu_F$, the flat pure expectation is self-consistent on the regular branch.
+ \item If $\mu_M<\mu<\mu_F$, neither pure expectation is self-consistent. On the certified regular branch there is a unique mixed resolution.
+\end{enumerate}
+\end{proposition}
+
+For the mixed resolution, let $h^*\in(h_M,h_F)$ be the unique state satisfying
+\begin{equation}
+ \Phi(l,h^*)=\mu.
+ \label{eq:hstar}
+\end{equation}
+At that state the provider is indifferent between architectures. If it meters with probability $\rho$, a high-use task's expected future rent is $R_F-\rho d p^*(h^*)$. The integration condition then gives
+\begin{equation}
+ \rho^*
+ =\frac{K_H(h_F-h^*)}{d\,p^*(h^*)},
+ \qquad 0<\rho^*<1.
+ \label{eq:rhostar}
+\end{equation}
+The regular-branch mixed equilibrium is therefore pinned down jointly by \eqref{eq:hstar} and \eqref{eq:rhostar}.
 
 \begin{figure}[ht]
   \centering
   \input{../figures/threshold_phase.tex}
-  \caption{Generated threshold-phase scaffold for the frozen exact example.}
+  \caption{The two self-consistency thresholds in the frozen exact example. The horizontal axis is the real metering activation cost $\mu$. The middle interval is the strict pure-regime gap for this example, not a claim that the same numerical interval applies outside the certified regular branch.}
   \label{fig:threshold-phase}
 \end{figure}
 
 \begin{table}[ht]
   \centering
   \input{../tables/baseline_example.tex}
-  \caption{Generated exact-example objects used for regression checks.}
+  \caption{Exact objects for the permanent regular example used in the regression suite. The table is generated from the same symbolic source as the verification checks.}
   \label{tab:baseline-example}
 \end{table}
+
+\subsection{Why endogenous integration is essential}
+
+\begin{corollary}[Threshold-collapse benchmark]\label{cor:collapse}
+If integration is exogenous or otherwise architecture-insensitive so that the provider faces the same high-use installed state under the two expectations, $h_M=h_F$, then
+\begin{equation}
+ \mu_M=\mu_F.
+\end{equation}
+The pure-regime gap collapses to the ordinary single static threshold.
+\end{corollary}
+
+Corollary~\ref{cor:collapse} separates the paper's dynamic mechanism from the static nonlinear-pricing problem. The gap is not generated by the existence of a two-part tariff itself. It requires the anticipated architecture to change the installed state that subsequently governs the provider's architecture incentive.
