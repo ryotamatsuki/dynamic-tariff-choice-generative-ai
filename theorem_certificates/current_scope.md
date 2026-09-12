@@ -1,6 +1,10 @@
 # Current theorem / scope certificate
 
-Status entering the dedicated repository: Stage 7.5A `CONDITIONAL GO` with Formal Verification as the only blocker.
+Stage 7.5A status: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**.
+
+Formal Verification Gate: **FORMAL VERIFICATION PASS**.
+
+Stage 8 Canonical Theory Freeze is authorized but has not yet been executed.
 
 ## T1 — Metered integration ordering
 
@@ -23,7 +27,8 @@ Prohibited wording: “Metering always reduces integration for all positive para
 
 - Baseline analytic proof: PASS
 - Stage-4A attack: PASS
-- Abstract order-theoretic implication: PASS analytically; targeted Lean verification pending successful build
+- Abstract order-theoretic implication: PASS analytically
+- Targeted Lean theorem: PASS (`threshold_separation`)
 
 Maximum wording: “Architecture-sensitive integration can split a static tariff threshold when metering induces a lower installed high-use state and metering gain rises with that state.”
 
@@ -37,6 +42,8 @@ Prohibited wording: “All concave demand systems exhibit threshold separation.�
 - Alternative-equilibrium audit on the strict regular branch: PASS
 - Boundary equality cases excluded
 - Outside-`R` global characterization not claimed
+- Lean strict-gap response implication: PASS
+- Lean conditional mixed-state uniqueness skeleton: PASS
 
 Abstract sufficient-condition wording may state only the no-pure-regime implication from ordered thresholds. Uniqueness of a mixed resolution additionally requires a continuous strictly monotone installed-state response to the provider's mixing probability.
 
@@ -56,8 +63,12 @@ Prohibited wording: “Metering is always socially excessive.”
 
 At `a_L=4`, `a_H=5`, `c=1`, `l=0.1`, `h=0.6`, H-only flat pricing beats the both-served flat continuation by exactly `23/10` in provider profit. Any theorem statement quantified over all positive installed compositions is therefore false.
 
+The exact arithmetic difference is independently retained in Python regression code and in Lean theorem `hOnly_scope_counterexample`.
+
 ## Formal-verification state
 
-`FORMALIZATION APPLICABLE`.
+**FORMAL VERIFICATION PASS.**
 
-Stage 8 remains blocked until a clean Lean build succeeds and the theorem-signature, axiom, placeholder, and statement-fidelity audits are closed.
+Successful CI build: workflow run `34660791188`, target `DynamicTariffFormal`, Lean 4.33.1 / mathlib v4.33.1. The build reports only standard logical/library axioms (`propext`, `Classical.choice`, `Quot.sound`) for the formal targets and the no-`sorry`/`admit` audit passes.
+
+The formalization boundary and statement-fidelity limits are recorded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md`.
