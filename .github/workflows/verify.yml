@@ -38,7 +38,7 @@ jobs:
           lake update
           lake exe cache get
       - name: Build formal target
-        run: lake build
+        run: lake build DynamicTariffFormal
       - name: Placeholder audit
         run: |
           if grep -R -n -E '\b(sorry|admit)\b' formal/*.lean; then
