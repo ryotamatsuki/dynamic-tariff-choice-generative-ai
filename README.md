@@ -4,11 +4,11 @@ Theory project on dynamic tariff architecture, sunk AI-specific integration, and
 
 ## Status
 
-**Stage 8 repaired theory freeze completed — THEORY FROZEN / GO TO REPRODUCIBILITY SETUP.**
+**Stage 9 — REPRODUCIBILITY BASELINE READY.**
 
-Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
+The repaired Stage-8 freeze is canonical and the repository/build baseline has been rebased on it. Canonical freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
-The current theorem package is:
+Current theorem package:
 
 - T1: on strict `R+`, `h_0<h_M<h_F`;
 - T2: on strict `R+`, `mu_M<mu_F`;
@@ -22,25 +22,23 @@ The surviving contribution is the reciprocal feedback
 
 `expected architecture -> continuation rent -> sunk integration -> installed high-use state -> relative architecture profitability -> architecture choice`,
 
-which splits one fixed-state threshold into two self-consistency thresholds. Generic hold-up, two-part tariffs, mixed equilibrium, AI/cloud application novelty, and quality/model improvement are not claimed as standalone contributions.
+which splits one fixed-state threshold into two self-consistency thresholds.
 
-## Canonical freeze records
+## Canonical records
 
 - `docs/STAGE_08_THEORY_FREEZE.md`
-- `docs/freeze_repaired/MODEL_REGISTER.md`
-- `docs/freeze_repaired/PROPOSITION_SCOPE_REGISTER.md`
-- `docs/freeze_repaired/WELFARE_BENCHMARK_REGISTER.md`
-- `docs/freeze_repaired/VERIFICATION_REGISTER.md`
-- `docs/freeze_repaired/CONTRIBUTION_REGISTER.md`
+- `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
+- `docs/REPRODUCIBILITY_REPAIRED.md`
+- `docs/freeze_repaired/`
 - `theorem_certificates/current_scope.md`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
 
-Formal Verification Gate: **PASS**. The Lean artifact certifies a targeted proof-critical core only, not the complete game/equilibrium correspondence.
+Build entry point: `make all`. CI entry points: `.github/workflows/verify.yml` and `.github/workflows/reproducibility.yml`.
 
-The previous freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d` and pre-repair Stage-9/10 artifacts are historical only.
+The pre-repair Stage-9/10 certification is historical. Existing manuscript prose is only a starting scaffold until repaired Stage 10 rewrites and re-certifies the exposition.
 
-Next authorized action: **rerun/rebase Stage 9 — Reproducibility Setup on the repaired freeze**.
+Next authorized action: **Stage 10 — Paper Build / Repair**.
 
-Preferred manuscript title after the downstream reproducibility gate: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
+Preferred manuscript title: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
 
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
