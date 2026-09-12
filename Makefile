@@ -10,12 +10,13 @@ verify-python:
 	$(PYTHON) verification/baseline_checks.py
 	$(PYTHON) verification/robustness_checks.py
 	$(PYTHON) verification/stage4a_repair_independent.py
+	$(PYTHON) verification/stage7_repaired_verify.py
 	$(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) scripts/check_integrity.py
 
 verify-lean:
 	lake build DynamicTariffFormal
-	@if grep -R -n -E '\b(sorry|admit)\b' formal/*.lean; then echo 'Forbidden proof placeholder found.'; exit 1; fi
+	@if grep -R -n -E 'sorry|admit' formal/*.lean; then echo 'Forbidden proof placeholder found.'; exit 1; fi
 
 artifacts:
 	$(PYTHON) scripts/generate_outputs.py
