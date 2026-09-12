@@ -4,31 +4,39 @@ Theory project on dynamic tariff architecture, sunk AI-specific integration, and
 
 ## Status
 
-**Stage 4R repair completed; repeated Stage 4A passed.**
+**Stage 6 Novelty Re-Kill / repair ratification passed.**
 
-A Stage-11B hostile review found two certification regressions in the previously frozen game definition: zero-surplus future participation was not explicitly specified, and provider continuation play was not globally certified at all installed-state histories. The repair now makes zero-surplus participation an explicit weak-IR primitive and defines the provider's global continuation best-response correspondence by active-set maximization.
+A Stage-11B hostile review found two certification regressions in the previously frozen game definition. Stage 4R repaired the zero-surplus participation convention and global continuation completeness; repeated Stage 4A passed on the strengthened strict regular region `R+`.
 
 - Stage 4R repair: **PASS**
 - Repeated Stage 4A: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**
+- Stage 6 re-kill: **GO — GO TO WELFARE / GENERALITY**
 - Old Stage 8 freeze: **STALE PENDING DOWNSTREAM RERUNS**
-- Next stage: **Stage 6 — Novelty Re-Kill / repair ratification**
+- Next stage: **Stage 7 — Welfare / Generality / Institutional Validation**
 - Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`
 
-## Repaired mechanism and scope
+## Repaired mechanism and surviving novelty
 
-The core mechanism survives the repair. On the strengthened strict regular region `R+`, every rational-expectations H installed state lies in `[h_0,h_F]`, and both-served flat and metered continuations are strict global active-set optima over that complete interval. Anticipated metering then induces `h_M<h_F`, while provider metering gain rises with the installed high-use state, yielding `mu_M<mu_F`. For `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified regular branch has a unique aggregate mixed resolution.
+On strict `R+`, every rational-expectations H installed state lies in `[h_0,h_F]`, and both-served flat and metered continuations are strict global active-set optima over that complete candidate interval. Anticipated metering induces `h_M<h_F`, while provider metering gain rises with the installed high-use state, yielding `mu_M<mu_F`. For `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified regular branch has a unique aggregate mixed resolution.
 
-The broader order implication remains only a sufficient-condition lemma, not arbitrary-concave-demand generality.
+Stage 6 re-killed generic novelty claims. The surviving contribution is only the reciprocal feedback
 
-## Current canonical repair records
+`architecture expectation -> installed high-use state -> profitability of that same architecture -> architecture choice`,
+
+which splits one fixed-state switching threshold into two self-consistency thresholds. Exogenous or architecture-insensitive integration collapses them back to one. Generic hold-up, commitment, fixed-versus-usage pricing, two-part tariffs, mixed equilibrium, inference cost, and AI/cloud application novelty are not claimed.
+
+The broader order implication remains only an organizing sufficient-condition lemma, not arbitrary-concave-demand generality.
+
+## Current canonical repair / re-kill records
 
 - `docs/STAGE_04R_REPAIR.md`
 - `docs/STAGE_04A_RECERTIFICATION.md`
 - `theorem_certificates/stage4a_repair_certificates.md`
 - `verification/stage4a_repair_independent.py`
+- `docs/STAGE_06_REKILL_REPAIR_RATIFICATION.md`
 - `docs/STAGE_11B_ASTRA_REFEREE_AUDIT.md`
 
-The previous Stage-8 freeze and Stage-10 manuscript remain in the repository as historical artifacts. They must not be treated as current certification until Stage 6, Stage 7, Stage 7.5, Stage 7.5A and Stage 8 are rerun.
+The previous Stage-8 freeze and Stage-10 manuscript remain in the repository as historical artifacts. They must not be treated as current certification until Stage 7, Stage 7.5, Stage 7.5A and Stage 8 are rerun.
 
 ## Reproduce
 
