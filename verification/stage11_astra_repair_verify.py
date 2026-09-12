@@ -167,7 +167,7 @@ def manuscript_guards() -> None:
     assert "B(p^*)-B(p)" in appendix
     assert "candidate interval" in model.lower()
     assert "actual globally optimal tariffs" in eqm
-    assert "average marginal price" in eqm
+    assert "average price" in eqm
 
 
 if __name__ == "__main__":
