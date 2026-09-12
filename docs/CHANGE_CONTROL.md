@@ -1,65 +1,25 @@
 # Theory Change Control
 
-This project was theory-frozen at Stage 8. No substantive change may be made silently.
+Current theory freeze: repaired Stage 8 declaration commit `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
-## Frozen object
+Canonical current records are `docs/STAGE_08_THEORY_FREEZE.md`, `docs/freeze_repaired/`, `theorem_certificates/current_scope.md`, and `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`.
 
-The prior frozen theory is `docs/STAGE_08_THEORY_FREEZE.md` plus its linked registers, `theorem_certificates/current_scope.md`, and `formal/FORMAL_VERIFICATION_CERTIFICATE.md`.
+The earlier freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d`, the old `docs/freeze/` records, old formal certificate, and pre-repair Stage-9/10 artifacts are historical only.
 
-Following the 2026-09-12 Stage-11B certification regression, that frozen object is retained for provenance but is **stale for current routing purposes** until the downstream gates are rerun and a new Stage-8 freeze is issued.
+Any substantive change must record what changed, why, affected equations/propositions/quantifiers, continuation or active-set effects, welfare benchmarks, verification, formal theorem statements, contribution wording, and stages to rerun.
 
-## Required record for any substantive change
+Rollback rules:
 
-Record: what changes; why; affected equations/definitions; affected propositions/quantifiers; affected active sets/continuations; affected welfare benchmarks; affected verification; affected Lean statements or supplied hypotheses; affected contribution/literature wording; and stages to rerun.
+- equilibrium, participation, strategy-domain, continuation/globality, or active-set change -> Stage 4/4A;
+- welfare accounting or planner benchmark change -> Stage 7 and any earlier affected stage;
+- generality, theorem quantifier, uniqueness, selection, or benchmark wording change -> Stage 7.5A;
+- material change to a formally certified theorem or encoded hypothesis -> formal certificate stale and fresh Stage-7.5A Formal Verification Gate required;
+- new mechanism, player, state, tariff instrument, or extension -> earliest affected scientific stage.
 
-## Mandatory rollback routing
+After substantive rollback, rerun all affected downstream gates and Stage 8. No silent theory drift is permitted.
 
-- Equilibrium correctness, strategy domain, continuation/globality or active-set changes: reopen Stage 4 and Stage 4A.
-- Welfare accounting or planner/benchmark changes: reopen Stage 7 and earlier stages if underlying mathematics changes.
-- Generality, theorem quantifiers, uniqueness, selection or benchmark wording changes: reopen Stage 7.5A.
-- Any material change to a formally certified theorem, encoded hypothesis or proof-critical identity makes the current formal certificate stale and requires a new Stage-7.5A Formal Verification Gate.
-- Any new mechanism, player, state, tariff instrument or extension returns to the earliest affected scientific stage.
+Pure notation cleanup, typo repair, citation maintenance, CI/path maintenance, and prose edits within frozen maximum-defensible wording do not reopen theory.
 
-After substantive rollback, Stage 8 must be rerun before downstream manuscript work continues.
+Stage-11B certification-regression provenance remains recorded in `docs/STAGE_04R_REPAIR.md` and `docs/STAGE_04A_RECERTIFICATION.md`. The repaired model specifies weak future participation at zero surplus, global provider continuation play, and strict `R+` over the complete candidate interval `[h_0,h_F]`.
 
-Pure notation cleanup, typo repair, path/CI maintenance that does not change a theorem statement, and prose edits within the frozen maximum-defensible wording do not reopen theory stages.
-
-## 2026-09-12 certification-regression event
-
-### Trigger
-
-Independent Stage-11B hostile review (`docs/STAGE_11B_ASTRA_REFEREE_AUDIT.md`) found two defects that the original Stage-4A gate should have caught:
-
-1. future participation at exactly zero continuation surplus was not explicitly defined even though the provider sets the L participation constraint exactly binding;
-2. the provider's global continuation best-response correspondence was not explicitly certified at every installed-state history.
-
-### Earliest affected stage
-
-Stage 4 / Stage 4A.
-
-### Authorized repair
-
-`docs/STAGE_04R_REPAIR.md` makes the smallest bounded repair:
-
-- future participation uses weak IR and participation at zero surplus;
-- integration at the exact cutoff is also specified (measure-zero under the baseline continuous distribution);
-- provider continuation play is globally defined by both-served / H-only / no-service active-set maximization;
-- the regular theorem domain is strengthened to `R+`, requiring strict both-served dominance over the complete rational-expectations candidate interval `[h_0,h_F]`.
-
-No player, state, tariff instrument, utility primitive, cost primitive, or headline mechanism is added.
-
-### Re-certification result
-
-Repeated Stage 4A (`docs/STAGE_04A_RECERTIFICATION.md`) returns:
-
-**GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS.**
-
-Independent permanent artifact: `verification/stage4a_repair_independent.py`.
-
-### Downstream regression obligations
-
-Before manuscript/referee work resumes, rerun in canonical order:
-
-Stage 6 → Stage 7 → Stage 7.5 → Stage 7.5A (including formal statement-fidelity) → Stage 8 refreeze.
-
-The prior Stage-8 freeze, prior `current_scope` certificate, and prior Stage-10 manuscript are historical artifacts only until that sequence is complete.
+After this refreeze, Stage 9 reproducibility setup must be rerun/rebased before manuscript/referee work resumes.
