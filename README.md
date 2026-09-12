@@ -41,6 +41,8 @@ The project must nevertheless remain narrow:
 
 Recommended title after repaired theory is refrozen: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**. The old “Model Improvement” wording is unsupported by the headline theorem.
 
+Journal positioning: **IJIO remains a plausible but demanding first target; JIE is not preferred at the repaired scope.** The main risk is that a referee views the interaction theorem as too narrow relative to the hold-up/commitment literature.
+
 ## Current canonical records
 
 - `docs/STAGE_04R_REPAIR.md`
