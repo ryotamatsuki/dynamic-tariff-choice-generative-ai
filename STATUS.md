@@ -1,18 +1,19 @@
 # Project status
 
-Stage 8: **THEORY FROZEN**.
+Stage 11B hostile review found a **certification regression** in the previously frozen game definition: zero-surplus future participation was not explicitly specified, and off-path provider continuations were not globally certified.
 
-Stage 9: **REPRODUCIBILITY BASELINE READY**.
+Stage 4R repair: **PASS**.  
+Repeated Stage 4A: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**.
 
-Stage 10: **FULL DRAFT READY FOR REFEREE GATE**.
+Current canonical repaired-model records:
 
-Next: **Stage 11 — Robustness / Referee Attack Gate**.
+- `docs/STAGE_04R_REPAIR.md`
+- `docs/STAGE_04A_RECERTIFICATION.md`
+- `theorem_certificates/stage4a_repair_certificates.md`
+- `verification/stage4a_repair_independent.py`
 
-Canonical freeze record: `docs/STAGE_08_THEORY_FREEZE.md`.
-Stage-9 record: `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`.
-Stage-10 record: `docs/STAGE_10_PAPER_BUILD.md`.
-Exposition map: `docs/STAGE_10_EXPOSITION_MAP.md`.
-Source-verification record: `docs/STAGE_10_SOURCE_VERIFICATION.md`.
-Reproduction guide: `docs/REPRODUCIBILITY.md`.
-Theory change control: `docs/CHANGE_CONTROL.md`.
+The old Stage-8 freeze, Stage-7.5A economic statement-fidelity certificate, and Stage-10 manuscript are retained as historical artifacts but are **stale for routing purposes** until the mandatory downstream gates are rerun.
+
+Next authorized action: **Stage 6 — Novelty Re-Kill / repair ratification**, followed by Stage 7, Stage 7.5, Stage 7.5A and Stage 8 refreeze before manuscript/referee work resumes.
+
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
