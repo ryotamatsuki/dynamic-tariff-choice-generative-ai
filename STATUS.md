@@ -16,6 +16,8 @@ Current canonical repaired-model / downstream records:
 - `docs/STAGE_07_REPAIRED_WELFARE_GENERALITY.md`
 - `verification/stage7_repaired_verify.py`
 
+The standard verification workflow and local `make verify` path now include the repaired Stage-7 welfare checks.
+
 Stage 7 retains a narrow welfare result: at a fixed installed base, the provider's metering threshold exceeds the social threshold by `d h p*(h)>0`. This is not a global endogenous-welfare theorem. The restricted architecture-commitment welfare ranking is sign-indeterminate even within strict `R+`.
 
 Generality remains deliberately narrow. A Stage-11B strictly concave counterexample reverses `h_M<h_F`, so arbitrary-concavity wording is prohibited. The abstract threshold-order result is only an organizing sufficient-condition lemma.
