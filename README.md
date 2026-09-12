@@ -4,9 +4,11 @@ Theory project on dynamic tariff architecture, sunk AI-specific integration, and
 
 ## Status
 
-**Stage 9 — REPRODUCIBILITY BASELINE READY.**
+**Stage 10 — FULL DRAFT READY FOR REFEREE GATE.**
 
-The repaired Stage-8 freeze is canonical and the repository/build baseline has been rebased on it. Canonical freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
+The repaired Stage-8 freeze remains canonical and Stage 9 is **REPRODUCIBILITY BASELINE READY**. Canonical freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
+
+Active manuscript title: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
 
 Current theorem package:
 
@@ -28,17 +30,16 @@ which splits one fixed-state threshold into two self-consistency thresholds.
 
 - `docs/STAGE_08_THEORY_FREEZE.md`
 - `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
-- `docs/REPRODUCIBILITY_REPAIRED.md`
+- `docs/STAGE_10_PAPER_BUILD_REPAIRED.md`
+- `docs/STAGE_10_FIGURE_TABLE_ARCHITECTURE.md`
 - `docs/freeze_repaired/`
 - `theorem_certificates/current_scope.md`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
 
-Build entry point: `make all`. CI entry points: `.github/workflows/verify.yml` and `.github/workflows/reproducibility.yml`.
+Build entry point: `make all`. CI entry points: `.github/workflows/verify.yml` and `.github/workflows/reproducibility.yml`. Stage 10 also enforces `scripts/check_stage10_manuscript.py`.
 
-The pre-repair Stage-9/10 certification is historical. Existing manuscript prose is only a starting scaffold until repaired Stage 10 rewrites and re-certifies the exposition.
+The original pre-repair manuscript certification is historical. The active manuscript now reflects weak participation at zero surplus, global continuation play, strict `R+`, the complete candidate interval `[h_0,h_F]`, and the permanent `23/10` outside-domain scope guard.
 
-Next authorized action: **Stage 10 — Paper Build / Repair**.
-
-Preferred manuscript title: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
+Next authorized action: **Stage 11 — Robustness / Referee Attack Gate**.
 
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
