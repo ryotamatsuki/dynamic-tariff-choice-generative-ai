@@ -1,40 +1,36 @@
 # Project status
 
-Stage 11B hostile review found a **certification regression** in the previously frozen game definition. Stage 4R repaired the participation/tie and continuation-completeness defects; repeated Stage 4A passed.
+The repaired theory has completed the required downstream gates after the Stage-11B certification regression.
 
-Stage 6 — Novelty Re-Kill / repair ratification: **GO**.
+- Stage 4R repair: PASS
+- repeated Stage 4A: PASS
+- Stage 6: GO
+- Stage 7: GO
+- Stage 7.5: GO
+- Stage 7.5A: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**
+- Formal Verification Gate: **FORMAL VERIFICATION PASS**
+- Next authorized action: **Stage 8 — Canonical Theory Freeze**
 
-Stage 7 — Welfare / Generality / Institutional Validation: **GO**.
+Current Stage-7.5A records:
 
-Stage 7.5 — Full-Theory Freeze Decision: **GO TO STAGE 7.5A GENERALITY / QUANTIFIER RED-TEAM**.
+- `docs/STAGE_075A_REPAIRED_CERTIFICATION.md`
+- `verification/stage075a_scope_verify.py`
+- `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
+- `formal/DynamicTariffFormal.lean`
 
-Current canonical repaired-model / downstream records:
+Current theorem scope:
 
-- `docs/STAGE_04R_REPAIR.md`
-- `docs/STAGE_04A_RECERTIFICATION.md`
-- `theorem_certificates/stage4a_repair_certificates.md`
-- `verification/stage4a_repair_independent.py`
-- `docs/STAGE_06_REKILL_REPAIR_RATIFICATION.md`
-- `docs/STAGE_07_REPAIRED_WELFARE_GENERALITY.md`
-- `verification/stage7_repaired_verify.py`
-- `docs/STAGE_075_REPAIRED_FREEZE_DECISION.md`
+- T1: on strict `R+`, `h_0<h_M<h_F`;
+- T2: on strict `R+`, `mu_M<mu_F`;
+- T3: for `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified branch has a unique aggregate mixed resolution;
+- B1: architecture-insensitive integration collapses the threshold split.
 
-The Stage-7.5 editorial/value gate finds that the repaired project still warrants a full paper, but only around the narrow reciprocal architecture-state feedback:
+T1–T3 remain quadratic-baseline strict-`R+` results. The abstract order result is an organizing sufficient-condition lemma. Nonquadratic evidence is numerical only. Arbitrary strict concavity is not a valid general theorem. No non-Uniform-CDF theorem is carried into the repaired freeze.
 
-`expected architecture -> continuation rent -> sunk integration -> installed high-use state -> relative architecture profitability -> architecture choice`.
+The repaired formal build passed on commit `d6ac2a4bca0bf10dbfea23b274951d15b39d8551`, workflow run `34678945920`. The formalization covers a targeted order/threshold/endpoint/welfare core only.
 
-The exact full-paper result is the splitting of one fixed-state switching threshold into two expectation-contingent self-consistency thresholds on strict `R+`, with a pure-regime gap between them and threshold collapse under architecture-insensitive integration. Generic hold-up, fixed-versus-usage pricing, mixed equilibrium, AI/cloud application novelty, quality improvement, and generic welfare wedges remain killed as standalone contribution claims.
+The pre-repair Stage-8 freeze and Stage-10 manuscript remain stale until the new Stage-8 freeze is completed.
 
-Stage 7.5 also confirms that strict `R+` and the failure of arbitrary-concavity generality must be prominent. The common-curvature nonquadratic result remains numerical robustness only. The fixed-installed-base welfare wedge remains narrow, and endogenous architecture welfare has no unconditional sign.
-
-Recommended next manuscript title after repaired theory is refrozen: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**. The old “Model Improvement” wording is not supported by the headline theorem.
-
-Journal positioning after repair: **IJIO remains a plausible but demanding first target; JIE is not the preferred target at the current scope.** The main publication risk is perceived narrowness, not an unresolved mathematical defect inside the certified claim set.
-
-Stage 7.5A receives the repaired Stage-4R/4A records, exact theorem certificates, Stage-6 novelty record, repaired Stage-7 welfare/generality record, Stage-4A and Stage-7 verification scripts, Stage-11B nonquadratic/counterexample evidence, and the existing Lean source as a conditional algebraic artifact pending renewed statement-fidelity certification.
-
-The old Stage-8 freeze, prior Stage-7.5/7.5A certificates, and Stage-10 manuscript remain **stale for routing purposes**.
-
-Next authorized action: **Stage 7.5A — Generality / Quantifier Red-Team and renewed formal-fidelity gate**. A new Stage-8 freeze remains blocked until Stage 7.5A passes.
+Recommended manuscript title after refreeze: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
 
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
