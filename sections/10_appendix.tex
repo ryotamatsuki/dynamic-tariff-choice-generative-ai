@@ -1,30 +1,78 @@
 \section{Proofs and Algebra}\label{app:proofs}
 
-\subsection{Continuation pricing and global active sets}
+\subsection{Global continuation from primitives}\label{app:global-continuation}
 
-On the both-served branch, type $L$ has the tighter participation constraint. Under the weak-participation convention the provider can set $F=S_L(p)$ exactly and retain the full installed low-use mass. Substitution into profit gives
+Write $A=a_L$, $d=a_H-a_L>0$, and $n=l+h$. For a fixed marginal price $p$, provider profit is affine and strictly increasing in the fixed fee $F$ whenever a positive mass continues to participate. Hence, within any fixed participation set, an optimal finite $F$ is the largest fee that preserves that set. Negative fixed fees cannot be optimal for a positive served mass: raising such an $F$ until a participation constraint binds weakly preserves the active set and strictly raises profit. Weak participation is used here to attain a binding threshold exactly.
+
+Because $S_H(p)\geq S_L(p)$ for every $p$, an anonymous tariff cannot serve an installed $L$ while excluding an installed $H$. When both masses are positive, the only economically distinct active sets are therefore both served, $H$ only, and no service. A zero-$h$ state has no separate screening issue: ``$L$ only'' then simply means serving the only installed type. Strict-$\mathcal R^+$ equilibrium candidates satisfy $h\geq h_0>0$.
+
+For $0\leq p<a_L$, both types have positive usage. The highest fixed fee serving both is $F=S_L(p)$, so
 \[
-\Pi_M^B(p\mid l,h)
-=(l+h)\frac{(a_L-p)^2}{2}
-+(p-c)\{l(a_L-p)+h(a_H-p)\}.
+ B(p)\equiv\Pi_M^B(p\mid l,h)
+ =n\frac{(A-p)^2}{2}+(p-c)\{l(A-p)+h(A+d-p)\}.
 \]
-Differentiation yields
+The candidate price is
 \[
-\frac{\partial \Pi_M^B}{\partial p}=dh-(l+h)(p-c),
-\qquad
-\frac{\partial^2 \Pi_M^B}{\partial p^2}=-(l+h)<0,
+ p^*=c+\frac{dh}{n}.
 \]
-so the unique interior both-served optimum is
+Direct completion of the square, rather than a local FOC, gives the exact identity
+\begin{equation}
+ B(p^*)-B(p)=\frac{n}{2}(p-p^*)^2\geq0.
+ \label{eq:square-loss}
+\end{equation}
+Thus $p^*$ is the unique global maximizer on any both-served price interval containing it. Under strict $\mathcal R^+$, $p^*>c>0$ and $p^*(h)\leq p^*(h_F)<a_L$, so the metered optimum is attained despite the open architecture restriction $p>0$.
+
+For an $H$-only outcome at a price $p<a_H$, the optimal fee is $F=S_H(p)$ and per-$H$ profit is
 \[
-p^*(h)=c+d\frac{h}{l+h}.
+ S_H(p)+(p-c)(a_H-p).
 \]
-Direct simplification gives
+This equals total surplus net of inference cost and is uniquely maximized at $p=c$, yielding
 \[
-\Pi_M^B(p^*(h)\mid l,h)-\Pi_F^B(l,h)
-=\frac{[c(l+h)+dh]^2}{2(l+h)}
-=\Phi(l,h).
+ \Pi_M^H(h)=h\frac{(a_H-c)^2}{2}.
 \]
-The provider's full continuation problem additionally compares this both-served candidate with the $H$-only and no-service values in equations \eqref{eq:VF-global} and \eqref{eq:VM-global}. Strict $\mathcal R^+$ makes the both-served candidate strictly optimal throughout the complete rational-expectations candidate interval $[h_0,h_F]$; no such claim is made at arbitrary installed states.
+Since $0<c<a_L$, this maximum is feasible and attained in the metered architecture. Under flat pricing, $p=0$ and the analogous $H$-only value is equation~\eqref{eq:flat-H-profit}.
+
+The price boundaries introduce no missing branch. At $p=a_L$, type $L$ has zero usage and $S_L=0$; if $F=0$ it participates by the weak-IR convention but contributes neither usage nor a positive fixed payment, so the economic allocation is the $H$-only boundary. For $a_L<p<a_H$, any positive $F$ excludes $L$ and the problem is $H$ only; choosing $F\leq0$ merely adds a zero-use $L$ mass paying a nonpositive fee and cannot improve on the corresponding $H$-only tariff. For $p\geq a_H$, both usage quantities are zero, and no service weakly dominates any subsidy. These observations also cover arbitrary finite negative-$F$ deviations.
+
+It remains to compare the globally optimized both-served and $H$-only branches. At the metered optimum, direct simplification gives
+\begin{equation}
+ D_M(h)\equiv B(p^*(h))-\Pi_M^H(h)
+ =\frac{l(A-c)^2}{2}-d(A-c)h-\frac{d^2lh}{2(l+h)},
+ \label{eq:DM}
+\end{equation}
+with
+\begin{equation}
+ D'_M(h)=-d(A-c)-\frac{d^2l^2}{2(l+h)^2}<0.
+ \label{eq:DMprime}
+\end{equation}
+For flat pricing,
+\begin{equation}
+ D_F(h)\equiv\Pi_F^B(l,h)-\Pi_F^H(h)
+ =l\left(\frac{A^2}{2}-cA\right)-\frac{hd(2A+d)}{2},
+ \label{eq:DF}
+\end{equation}
+so
+\begin{equation}
+ D'_F(h)=-\frac{d(2A+d)}{2}<0.
+ \label{eq:DFprime}
+\end{equation}
+Strict conditions \eqref{eq:Rplus6}--\eqref{eq:Rplus7} say $D_F(h_F)>0$ and $D_M(h_F)>0$. Monotonicity therefore gives strict both-served dominance over $H$ only at every $h\leq h_F$. No service is also dominated throughout the candidate interval: $\Pi_F^B$ is affine in $h$ and is strictly positive at both endpoints by \eqref{eq:Rplus5}, while optimized metered both-served profit equals flat both-served profit plus the strictly positive gross gain $\Phi(l,h)$. Hence equations \eqref{eq:VF-global}--\eqref{eq:VM-global} select the both-served branches throughout the complete candidate interval.
+
+\subsection{Why the candidate state interval is complete}\label{app:candidate-completeness}
+
+The preceding global problem implies the state bounds rather than assuming them. At every optimal continuation, type $L$ receives zero continuation rent. If both types are served, $F=S_L(p)$ binds $L$'s participation constraint. If only $H$ is served or there is no service, $L$ receives zero. Thus its integration condition is $k\leq b_L$, and the uniform cost distribution plus $l\in(0,1)$ gives $l=b_L/K_L$ in every candidate equilibrium.
+
+Type $H$'s optimal continuation rent lies in $[0,R_F]$. An $H$-only optimum extracts all of its continuation surplus, and no service gives zero. On a both-served branch with $0\leq p\leq a_L$,
+\[
+ S_H(p)-S_L(p)=R_F-dp\in[0,R_F],
+\]
+where flat pricing $p=0$ attains the upper endpoint. Any provider mixture over optimal continuations yields an expected rent in the same closed interval. Since strict $\mathcal R^+$ imposes $b_H+R_F<K_H$, the uniform-cost cutoff never saturates, and therefore
+\[
+ h=\frac{b_H+\mathbb E[R_H]}{K_H}\in
+ \left[\frac{b_H}{K_H},\frac{b_H+R_F}{K_H}\right]
+ =[h_0,h_F].
+\]
+This establishes candidate-interval completeness before the endpoint-dominance argument of the previous subsection is invoked. Positive $b_H$ gives $h_0>0$. Exact fixed-fee attainment uses weak participation; under strict participation an $\varepsilon$-implementation or limit argument would be a different model and is not claimed here.
 
 \subsection{Proof of Proposition~\ref{prop:T1}}
 
@@ -58,11 +106,31 @@ Equation \eqref{eq:Phi-derivative} implies that $\Phi(l,h)$ is strictly increasi
 \]
 \qed
 
-\subsection{Proof of Proposition~\ref{prop:T3}}
+\subsection{Pure boundaries and proof of Proposition~\ref{prop:T3}}\label{app:mixed-proof}
 
-Under a pure metered expectation the installed high-use state is $h_M$. The provider prefers metering when $\mu<\mu_M$ and flat pricing when $\mu>\mu_M$. Under a pure flat expectation the installed state is $h_F$, and the provider prefers flat pricing when $\mu>\mu_F$ and metering when $\mu<\mu_F$. Hence neither pure expectation is self-consistent for $\mu_M<\mu<\mu_F$.
+Under a pure metered expectation the installed state is $h_M$. The provider weakly prefers metering exactly when $\mu\leq\mu_M$, so the pure metered outcome is self-consistent on that closed region. Under a pure flat expectation the state is $h_F$, and flat pricing is weakly optimal exactly when $\mu\geq\mu_F$.
 
-Because $\Phi(l,h)$ is continuous and strictly increasing, there is a unique $h^*\in(h_M,h_F)$ satisfying $\Phi(l,h^*)=\mu$. If $\rho$ is the probability of metering, the high-use integration condition is
+The equalities require an aggregation check. At $\mu=\mu_M$, suppose the provider used a metering probability $\rho<1$. The integration equation evaluated at $h_M$ has excess right-hand side
+\[
+ (1-\rho)d p^*(h_M)>0.
+\]
+Its left-minus-right crossing is strictly increasing because $K_H+\rho d\,p^{*\prime}(h)>0$, so the induced root satisfies $h>h_M$. Strict monotonicity of $\Phi$ then gives $\Phi(l,h)>\mu_M$, making metering strictly optimal, a contradiction to $\rho<1$. Hence the aggregate boundary equilibrium has $\rho=1$ and $h=h_M$.
+
+At $\mu=\mu_F$, any $\rho>0$ implies from
+\[
+ K_H(h_F-h)=\rho d p^*(h)>0
+\]
+that $h<h_F$. Then $\Phi(l,h)<\mu_F$, so flat pricing is strictly optimal and positive metering probability is impossible. Thus the aggregate boundary equilibrium has $\rho=0$ and $h=h_F$. Provider indifference at either pure induced state therefore does not generate a continuum of aggregate mixtures.
+
+For the strict interval $\mu_M<\mu<\mu_F$, neither pure expectation is self-consistent. Because $\Phi(l,h)$ is continuous and strictly increasing, there is a unique $h^*\in(h_M,h_F)$ satisfying $\Phi(l,h^*)=\mu$. At that state the provider is indifferent between the globally optimal flat tariff
+\[
+ (F_F,p_F)=\left(\frac{a_L^2}{2},0\right)
+\]
+and the globally optimal metered tariff
+\[
+ (F_M,p_M)=\left(S_L(p^*(h^*)),p^*(h^*)\right).
+\]
+If the provider realizes the metered tariff with probability $\rho$, the high-use integration condition is
 \[
 K_Hh^*=b_H+R_F-\rho d p^*(h^*),
 \]
@@ -74,7 +142,9 @@ Positivity follows from $h^*<h_F$. Since $g$ is strictly decreasing and $h^*>h_M
 \[
 K_H(h_F-h^*)<d p^*(h^*).
 \]
-Thus $0<\rho^*<1$. Uniqueness follows from uniqueness of $h^*$ and the integration identity. \qed
+Thus $0<\rho^*<1$.
+
+The user strategies in \eqref{eq:integration-strategies} are best responses because $L$ obtains zero continuation rent under either realized tariff, while $H$ obtains $R_F$ under flat pricing and $R_F-dp^*(h^*)$ under metering. Hence the expected integration gains are exactly the two cutoff expressions. Uniform costs aggregate these strategies to $l=b_L/K_L$ and $h=h^*$. Users choose future quantities only after the tariff realization; no average-price demand is used. Because users are atomless, a single integration deviation does not change the aggregate state and hence does not change the provider's continuation. Off path, the provider selects the full global continuation in equations \eqref{eq:VF-global}--\eqref{eq:VM-global}, with arbitrary mixing only at genuine payoff ties. Therefore $(h^*,\rho^*)$ is the unique aggregate mixed resolution, while measure-zero cutoff actions and off-path tie-breaking need not be unique. \qed
 
 \subsection{Proof of Corollary~\ref{cor:collapse}}
 

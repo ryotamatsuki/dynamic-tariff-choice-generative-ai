@@ -28,6 +28,8 @@ jobs:
         run: python verification/stage7_repaired_verify.py
       - name: Repaired Stage 11 independent referee checks
         run: python verification/stage11_repaired_independent.py
+      - name: Astra Stage 11 repair checks
+        run: python verification/stage11_astra_repair_verify.py
       - name: Stage 10 manuscript scope gate
         run: python scripts/check_stage10_manuscript.py
 

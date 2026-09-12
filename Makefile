@@ -12,6 +12,7 @@ verify-python:
 	$(PYTHON) verification/stage4a_repair_independent.py
 	$(PYTHON) verification/stage7_repaired_verify.py
 	$(PYTHON) verification/stage11_repaired_independent.py
+	$(PYTHON) verification/stage11_astra_repair_verify.py
 	$(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) scripts/check_integrity.py
 	$(PYTHON) scripts/check_stage10_manuscript.py
