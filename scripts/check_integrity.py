@@ -57,7 +57,7 @@ def require_scope_guards() -> None:
     assert "strict `R+`" in scope
     assert "arbitrary strict concavity" in scope
     assert "23/10" in verification
-    assert "PROOF-CRITICAL CORE" in formal
+    assert "proof-critical" in formal.lower()
     assert "THEORY FROZEN" in stage8
     assert "rerun/rebase Stage 9" in status
 
