@@ -13,6 +13,7 @@ verify-python:
 	$(PYTHON) verification/stage7_repaired_verify.py
 	$(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) scripts/check_integrity.py
+	$(PYTHON) scripts/check_stage10_manuscript.py
 
 verify-lean:
 	lake build DynamicTariffFormal
