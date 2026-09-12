@@ -1,8 +1,4 @@
-"""Repository-integrity checks against the repaired Stage 8 freeze.
-
-Manuscript files are retained for provenance until Stage 9/10 are rerun; this gate
-certifies the current theory/reproducibility inputs, not the stale manuscript prose.
-"""
+"""Repository-integrity checks against the repaired Stage 8 freeze and Stage 9 baseline."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -13,6 +9,8 @@ FREEZE_SHA = "c9e43c99d9deb56bad52637024b9dab7b3673aee"
 
 REQUIRED = [
     "docs/STAGE_08_THEORY_FREEZE.md",
+    "docs/STAGE_09_REPRODUCIBILITY_SETUP.md",
+    "docs/REPRODUCIBILITY_REPAIRED.md",
     "docs/freeze_repaired/MODEL_REGISTER.md",
     "docs/freeze_repaired/PROPOSITION_SCOPE_REGISTER.md",
     "docs/freeze_repaired/WELFARE_BENCHMARK_REGISTER.md",
@@ -52,6 +50,7 @@ def require_scope_guards() -> None:
     verification = (ROOT / "docs/freeze_repaired/VERIFICATION_REGISTER.md").read_text(encoding="utf-8")
     formal = (ROOT / "formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md").read_text(encoding="utf-8")
     stage8 = (ROOT / "docs/STAGE_08_THEORY_FREEZE.md").read_text(encoding="utf-8")
+    stage9 = (ROOT / "docs/STAGE_09_REPRODUCIBILITY_SETUP.md").read_text(encoding="utf-8")
     status = (ROOT / "STATUS.md").read_text(encoding="utf-8")
 
     assert "strict `R+`" in scope
@@ -59,14 +58,15 @@ def require_scope_guards() -> None:
     assert "23/10" in verification
     assert "proof-critical" in formal.lower()
     assert "THEORY FROZEN" in stage8
-    assert "rerun/rebase Stage 9" in status
+    assert "REPRODUCIBILITY BASELINE READY" in stage9
+    assert "REPRODUCIBILITY BASELINE READY" in status
 
 
 def main() -> None:
     require_paths()
     require_freeze_ancestor()
     require_scope_guards()
-    print("repaired Stage 8 repository integrity checks: PASS")
+    print("repaired Stage 9 repository integrity checks: PASS")
 
 
 if __name__ == "__main__":
