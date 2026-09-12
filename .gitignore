@@ -7,3 +7,16 @@ venv/
 lake-packages/
 *.olean
 *.ilean
+
+# Generated manuscript artifacts
+figures/threshold_phase.tex
+tables/baseline_example.tex
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.pdf
+paper/*.toc
