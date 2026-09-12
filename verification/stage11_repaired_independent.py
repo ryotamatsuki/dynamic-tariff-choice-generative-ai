@@ -41,7 +41,6 @@ def baseline_exact_checks() -> None:
     muF = sp.simplify(phi.subs(h, hF))
     assert sp.N(muM) < sp.Rational(13, 10) < sp.N(muF)
 
-    # Exact frozen values used as an independent anchor.
     assert h0 == sp.Rational(1, 16)
     assert hF == sp.Rational(5, 8)
     assert hM == (-sp.Rational(17) + sp.sqrt(2849)) / 80
@@ -67,9 +66,6 @@ def endpoint_propagation_identities() -> None:
     d_metered_gap = sp.factor(sp.diff(metered_both - metered_h_only, h))
     target = -d * (2 * (aL - c) * (h + l) ** 2 + d * l**2) / (2 * (h + l) ** 2)
     assert sp.simplify(d_metered_gap - target) == 0
-
-    # Both gaps are strictly decreasing in h under the baseline primitive ordering.
-    # Therefore strict dominance at h_F propagates to every h <= h_F.
 
 
 def direct_continuation_attack() -> None:
@@ -97,19 +93,20 @@ def direct_continuation_attack() -> None:
             (l + h) * s(aL, pstar)
             + (pstar - c) * (l * q(aL, pstar) + h * q(aH, pstar))
         )
-        h_only_star = h * (aH - c) ** 2 / 2.0
+        h_only_global = h * (aH - c) ** 2 / 2.0
         assert 0.0 < pstar < aL
-        assert both_star > max(h_only_star, 0.0)
+        assert both_star > max(h_only_global, 0.0)
 
-        # Clean-room finite deviation search.  For each p, compare the two feasible
-        # fixed-fee thresholds: serve both at F=S_L(p), or serve H only at F=S_H(p).
+        # Search the full economically relevant p-range, deliberately crossing
+        # p=a_L where the low-use active set disappears.
         best = -1e100
         best_p = None
-        n = 20000
+        n = 25000
         for i in range(1, n + 1):
-            p = aL * i / n
-            both = (l + h) * s(aL, p) + (p - c) * (l * q(aL, p) + h * q(aH, p))
-            h_only = h * (s(aH, p) + (p - c) * q(aH, p))
+            p = aH * i / n
+            ql, qh = q(aL, p), q(aH, p)
+            both = (l + h) * s(aL, p) + (p - c) * (l * ql + h * qh)
+            h_only = h * (s(aH, p) + (p - c) * qh)
             value = max(both, h_only, 0.0)
             if value > best:
                 best, best_p = value, p
@@ -118,12 +115,7 @@ def direct_continuation_attack() -> None:
 
 
 def strict_concavity_scope_attack() -> None:
-    """An admissible nonbaseline counterexample to arbitrary-concavity scope.
-
-    Both classes retain strictly concave quadratic utilities, but curvatures differ:
-    v_L(q)=3q-q^2/2 and v_H(q)=9q/2-q^2.  Metering raises H's continuation rent,
-    so the state-order mechanism need not survive arbitrary strict concavity.
-    """
+    """An admissible nonbaseline counterexample to arbitrary-concavity scope."""
     p = sp.symbols("p", real=True)
     aL, aH = sp.Rational(3), sp.Rational(9, 2)
     rL, rH = sp.Rational(1), sp.Rational(2)
