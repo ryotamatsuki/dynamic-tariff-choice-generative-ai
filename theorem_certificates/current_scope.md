@@ -3,7 +3,8 @@
 Stage 4A: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**.  
 Stage 7.5A: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**.  
 Formal Verification Gate: **FORMAL VERIFICATION PASS**.  
-Stage 8: **THEORY FROZEN — GO TO REPRODUCIBILITY SETUP**.
+Stage 8: **THEORY FROZEN**.  
+Stage 9: **REPRODUCIBILITY BASELINE READY**.
 
 Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
@@ -61,4 +62,4 @@ Verified repaired build source `d6ac2a4bca0bf10dbfea23b274951d15b39d8551`, workf
 
 ## Routing
 
-Stage 9 must be rerun/rebased on the repaired Stage-8 freeze before manuscript/referee work resumes. Pre-repair Stage-9/10 artifacts are historical until that rerun.
+Stage 10 paper build/repair is authorized only against the repaired Stage-8 freeze and the Stage-9 writing contract in `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`. Pre-repair Stage-10 wording has no inherited certification.
