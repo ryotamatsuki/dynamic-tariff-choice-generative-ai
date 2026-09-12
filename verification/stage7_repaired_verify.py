@@ -9,9 +9,7 @@ repaired strict R+ conditions.
 
 from __future__ import annotations
 
-import math
 import sympy as sp
-from scipy.optimize import brentq
 
 
 # ---------------------------------------------------------------------------
@@ -33,6 +31,25 @@ pstar = c + d * x
 mu_private = sp.simplify(n * pstar**2 / 2)
 mu_social = sp.simplify(n * (c**2 - d**2 * x**2) / 2)
 assert sp.simplify(mu_private - mu_social - d * h * pstar) == 0
+
+
+def bisect_root(f, lo: float, hi: float, tol: float = 1e-13, iters: int = 300) -> float:
+    flo, fhi = f(lo), f(hi)
+    if abs(flo) <= tol:
+        return lo
+    if abs(fhi) <= tol:
+        return hi
+    assert flo * fhi < 0, (flo, fhi)
+    for _ in range(iters):
+        mid = (lo + hi) / 2.0
+        fm = f(mid)
+        if abs(fm) <= tol or hi - lo <= tol:
+            return mid
+        if flo * fm <= 0:
+            hi, fhi = mid, fm
+        else:
+            lo, flo = mid, fm
+    return (lo + hi) / 2.0
 
 
 # ---------------------------------------------------------------------------
@@ -78,7 +95,7 @@ def metrics(aL: float, aH: float, c0: float,
     def meter_fp(hh: float) -> float:
         return KH * hh - (bH + RF - dd * pp(hh))
 
-    hM = brentq(meter_fp, h0, hF)
+    hM = bisect_root(meter_fp, h0, hF)
     assert h0 < hM < hF
 
     def om(aa: float, px: float) -> float:
