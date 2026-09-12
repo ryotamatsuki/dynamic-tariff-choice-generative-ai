@@ -45,11 +45,11 @@ The timing is:
  \item integrated tasks choose future participation and usage.
 \end{enumerate}
 
-Users are forward-looking and atomless. The exact integration-cutoff type is indifferent and has measure zero under the uniform distribution. Equilibrium combines rational expectations at the integration stage with globally optimal continuation play by the provider at every installed state. If the provider mixes between architectures, users take the aggregate mixing probability as given when deciding whether to integrate.
+Users are forward-looking and atomless. The exact integration-cutoff type is indifferent and has measure zero under the uniform distribution. Equilibrium combines rational expectations at the integration stage with globally optimal continuation play by the provider at every installed state. If the provider mixes between architectures, users take the provider's aggregate mixing probability as given when deciding whether to integrate; they evaluate realization-contingent continuation utilities rather than choosing future usage at an average marginal price.
 
 \subsection{Global provider continuation}
 
-Since $S_H(p)\geq S_L(p)$ for all $p$, an anonymous tariff can generate only three relevant participation regimes: both classes served, only $H$ served, or no service. A tariff that serves $L$ while excluding installed $H$ is impossible.
+Since $S_H(p)\geq S_L(p)$ for all $p$, an anonymous tariff with positive installed masses cannot serve $L$ while excluding $H$. The economically distinct participation regimes are therefore both classes served, only $H$ served, or no service. If $h=0$, the label ``$L$ only'' merely describes the only installed class rather than an additional screening regime; strict $\mathcal R^+$ equilibrium candidates have $h>0$.
 
 Under flat pricing, the provider's globally optimized continuation value is
 \begin{equation}
@@ -80,7 +80,7 @@ Thus
  V_M(l,h)=\max\left\{\max_{0<p\leq a_L}\Pi_M^B(p\mid l,h),\Pi_M^H(h),0\right\}.
  \label{eq:VM-global}
 \end{equation}
-The provider compares $V_F(l,h)$ with $V_M(l,h)-\mu$; equality permits mixing. Hence continuation play is defined even off the both-served equilibrium branch.
+Appendix~\ref{app:proofs} derives these global values from the unrestricted fixed fee, including negative fixed-fee deviations and the price regions $p<a_L$, $p=a_L$, $a_L<p<a_H$, and $p\geq a_H$. In particular, the $H$-only metered maximum is attained at $p=c>0$, so the open metered strategy restriction $p>0$ does not create a missing supremum. The provider compares $V_F(l,h)$ with $V_M(l,h)-\mu$; equality permits mixing. Hence continuation play is defined even off the both-served equilibrium branch.
 
 \subsection{The strict repaired region $\mathcal R^+$}
 
@@ -95,7 +95,12 @@ The headline theorems are not global over all positive parameters. Define
  h_F\equiv\frac{b_H+R_F}{K_H}.
  \label{eq:state-definitions}
 \end{equation}
-Every rational-expectations candidate high-use mass lies in the complete interval $[h_0,h_F]$.
+The interval $[h_0,h_F]$ is a consequence of optimal continuation, not an imposed equilibrium search domain. At every globally optimal continuation, type $L$ receives zero continuation rent: when served, the optimal fixed fee binds the lowest active participation constraint, and when not served its continuation value is zero. Hence its integration cutoff is $b_L$ and every equilibrium candidate has $l=b_L/K_L$. Type $H$'s continuation rent is between zero and $R_F$: an $H$-only optimum extracts its continuation surplus, while on a both-served branch its rent is $S_H(p)-S_L(p)\in[0,R_F]$, with the flat architecture attaining $R_F$. A mixture of optimal continuations gives a convex combination of rents in the same interval. Under the non-saturation restriction below, the high-use integration cutoff therefore implies
+\begin{equation}
+ h\in[h_0,h_F]
+ \label{eq:candidate-interval}
+\end{equation}
+for every rational-expectations candidate, including candidates induced by provider mixing. This argument uses weak participation for exact fixed-fee attainment, positive installed masses on the candidate set, and the strict non-saturation condition $b_H+R_F<K_H$.
 
 The strict region $\mathcal R^+$ imposes:
 \begin{align}
@@ -107,4 +112,4 @@ The strict region $\mathcal R^+$ imposes:
  &\Pi_F^B(l,h_F)>\Pi_F^H(h_F),\label{eq:Rplus6}\\
  &\Pi_M^B\!\left(c+d\frac{h_F}{l+h_F}\mid l,h_F\right)>\Pi_M^H(h_F).\label{eq:Rplus7}
 \end{align}
-The repaired global-deviation audit shows that these strict endpoint conditions deliver both-served dominance throughout the complete candidate interval $[h_0,h_F]$. They do not imply that both-served pricing is globally optimal at arbitrary installed states. Section~\ref{sec:robustness} retains an exact $H$-only counterexample outside $\mathcal R^+$ for that reason.
+Only after deriving the complete candidate interval in \eqref{eq:candidate-interval} do we invoke the repaired endpoint-dominance conditions. Appendix~\ref{app:proofs} shows that the relevant both-served-minus-$H$-only profit gaps are strictly decreasing in $h$, so strict dominance at $h_F$ propagates throughout $[h_0,h_F]$. These restrictions do not imply that both-served pricing is globally optimal at arbitrary installed states. Section~\ref{sec:robustness} retains an exact $H$-only counterexample outside $\mathcal R^+$ for that reason.
