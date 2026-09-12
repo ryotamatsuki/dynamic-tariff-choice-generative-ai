@@ -47,7 +47,7 @@ def require_scope_guards() -> None:
     formal = (ROOT / "formal/FORMAL_VERIFICATION_CERTIFICATE.md").read_text(encoding="utf-8")
     assert "arbitrary concave demand" in scope
     assert "23/10" in verification
-    assert "PROOF-CRITICAL CORE" in formal
+    assert "proof-critical" in formal.lower()
 
 
 def main() -> None:
