@@ -1,48 +1,50 @@
-# Stage 9 — Repository / Reproducibility Setup
+# Stage 9 — Repository / Reproducibility Setup (Repaired Freeze)
 
-Date: 2026-09-12 (JST)
-Workflow: `ryotamatsuki/research-paper-workflow` v2.1
-Project: **Dynamic Tariff Choice for Generative AI: Model Improvement, Commitment, and Welfare**
+Date: 2026-09-12 (JST)  
+Workflow: `ryotamatsuki/research-paper-workflow` v2.1  
+Project: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**
 
 ## Verdict
 
 **REPRODUCIBILITY BASELINE READY.**
 
-Stage 10 paper construction is authorized, subject to the exact writing contract below. No theory change was made in Stage 9.
+Stage 9 is rerun/rebased on the repaired Stage-8 freeze. No theory, theorem scope, benchmark definition, or economic mechanism is changed here.
 
 ## 1. Starting remote state
 
-At Stage-9 work start:
+At repaired Stage-9 work start:
 
-- `main`: `2597e82044ec94a58fad033227ea415e64af8c6d`;
-- that SHA is the Stage-8 canonical theory-freeze point;
-- branches visible: `main` only;
+- `main`: `8311e4cfddd016cd6a69126d26d9c52339549c4e`;
+- canonical repaired Stage-8 freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`;
+- visible branches: `main` and `audit/stage11b-astra-independent`;
 - open pull requests: none.
 
-The setup was built forward from that freeze. No reset to a historical SHA was used.
+The audit branch is retained as provenance and was not overwritten. No reset to a historical SHA was used.
 
-## 2. Production repository tree
+## 2. Canonical production tree
 
-The production scaffold now includes:
+The reproducibility baseline uses:
 
-- `paper/main.tex` — modular manuscript entry point;
-- `sections/` — Stage-10 section files;
-- `figures/` and `tables/` — generated manuscript inputs plus pipeline documentation;
-- `scripts/generate_outputs.py` — deterministic table/figure generator from the frozen exact example;
-- `scripts/check_integrity.py` — freeze-ancestry, required-path, and scope-guard checks;
-- `tests/test_regressions.py` — permanent frozen-theory regressions;
-- `verification/` — exact symbolic and robustness checks retained from certification;
-- `formal/` — Lean proof-critical core and formal certificate;
-- `theorem_certificates/` — theorem/scope certificate;
-- `references/references.bib` — bibliography database scaffold;
-- `docs/freeze/` — canonical Stage-8 model, proposition, welfare, verification, and contribution registers;
-- `docs/REPRODUCIBILITY.md` — local/CI reproduction guide;
-- `.github/workflows/verify.yml` and `.github/workflows/reproducibility.yml` — independent formal/theory and full repository gates;
-- `Makefile` — documented build interface.
+- `paper/main.tex` — modular LaTeX entry point;
+- `sections/` — manuscript section sources to be rewritten/re-certified at Stage 10;
+- `figures/`, `tables/` — deterministic generated inputs;
+- `scripts/generate_outputs.py` — deterministic figure/table generation;
+- `scripts/check_integrity.py` — repaired-freeze ancestry, path, scope, and routing guards;
+- `tests/test_regressions.py` — permanent exact regressions;
+- `verification/` — symbolic, independent adversarial, welfare, quantifier, and hostile-audit artifacts;
+- `formal/` — repaired Lean proof-critical core and certificate;
+- `theorem_certificates/` — Stage-4A and current claim-scope certificates;
+- `references/` — bibliography sources;
+- `docs/freeze_repaired/` — canonical repaired model/proposition/welfare/verification/contribution registers;
+- `docs/REPRODUCIBILITY.md` — local and CI reproduction guide;
+- `.github/workflows/verify.yml`, `.github/workflows/reproducibility.yml` — independent theory/formal and full-repository gates;
+- `Makefile` — one-command build interface.
+
+Pre-repair `docs/freeze/` records and pre-repair Stage-9/10 prose remain historical provenance only.
 
 ## 3. Build system
 
-The documented full local-equivalent gate is:
+With Python, Lean/Lake, and LaTeX available:
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -51,98 +53,101 @@ lake exe cache get
 make all
 ```
 
-`make all` runs Python verification/regression/integrity checks, the explicit Lean target and placeholder audit, deterministic figure/table generation, and the LaTeX manuscript build.
+`make all` runs the Python/theory regressions, repaired integrity gate, explicit Lean target and placeholder audit, deterministic artifact generation, and LaTeX build.
 
 Partial targets are `make verify-python`, `make verify-lean`, `make artifacts`, and `make paper`.
 
-## 4. Verification and permanent tests
+## 4. Verification / regression artifacts
 
-Frozen-theory verification remains in:
+Required repaired-theory artifacts include:
 
 - `verification/baseline_checks.py`;
-- `verification/robustness_checks.py`;
-- `formal/DynamicTariffFormal.lean`.
+- `verification/robustness_checks.py` — numerical robustness only where so scoped;
+- `verification/stage4a_repair_independent.py`;
+- `verification/stage7_repaired_verify.py`;
+- `verification/stage075a_scope_verify.py`;
+- `verification/stage11b_astra_independent_audit.py` — hostile-audit provenance;
+- `formal/DynamicTariffFormal.lean`;
+- `tests/test_regressions.py`.
 
-Permanent regressions are in `tests/test_regressions.py`, including:
+Permanent regressions include the exact strict-`R+` example, `h_0<h_M<h_F`, the threshold-gap example, architecture-insensitive threshold collapse, and the outside-domain H-only counterexample with exact advantage `23/10`.
 
-1. the exact certified regular example with `h_M<h_F` and `mu_M<mu<mu_F`;
-2. the outside-`R` H-only counterexample with exact advantage `23/10`;
-3. collapse of the two architecture thresholds when the installed state is architecture-insensitive.
+No certified counterexample is deleted or reinterpreted as a theorem-domain result.
 
-`check_integrity.py` additionally requires the Stage-8 freeze SHA to remain an ancestor of the build head and checks that the permanent scope guards remain present.
+## 5. Theorem / claim-scope traceability
 
-## 5. Theorem certificates and claim-scope artifacts
+Canonical locations are:
 
-Canonical locations:
-
+- `theorem_certificates/stage4a_repair_certificates.md`;
 - `theorem_certificates/current_scope.md`;
-- `formal/FORMAL_VERIFICATION_CERTIFICATE.md`;
-- `docs/freeze/PROPOSITION_SCOPE_REGISTER.md`;
-- `docs/freeze/VERIFICATION_REGISTER.md`;
-- `docs/freeze/WELFARE_BENCHMARK_REGISTER.md`;
-- `docs/freeze/CONTRIBUTION_REGISTER.md`.
+- `docs/STAGE_075A_REPAIRED_CERTIFICATION.md`;
+- `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`;
+- `docs/freeze_repaired/PROPOSITION_SCOPE_REGISTER.md`;
+- `docs/freeze_repaired/VERIFICATION_REGISTER.md`;
+- `docs/freeze_repaired/WELFARE_BENCHMARK_REGISTER.md`;
+- `docs/freeze_repaired/CONTRIBUTION_REGISTER.md`.
 
-These are retained as first-class repository artifacts and are not replaced by manuscript summaries.
+Headline paper statements must trace to these artifacts. Lean is described only as targeted proof-critical-core verification, not full-game certification.
 
-## 6. Environment / dependency record
+## 6. Environment / dependencies
 
 - Python CI: 3.12;
-- Python: `sympy==1.14.0`;
+- Python dependency: `sympy==1.14.0`;
 - Lean: 4.33.1;
-- mathlib: v4.33.1;
-- LaTeX build: `latexmk` plus TeX Live recommended/extra/pictures and `lmodern`.
+- mathlib: v4.33.1, repaired formal certificate records resolved revision `0df444a360eaa60ab8c11dca51a86af692955474`;
+- LaTeX: `latexmk` plus TeX Live recommended/extra/pictures and `lmodern`.
 
-Lean and mathlib remain pinned by `lean-toolchain` and `lakefile.lean`.
+Lean and mathlib are pinned by `lean-toolchain` and `lakefile.lean`.
 
-## 7. Figure and table pipeline
+## 7. Figure / table pipeline
 
-`scripts/generate_outputs.py` regenerates:
+`scripts/generate_outputs.py` deterministically regenerates:
 
 - `figures/threshold_phase.tex`;
 - `tables/baseline_example.tex`.
 
-Both files are generated from frozen exact expressions, are git-ignored, and are consumed directly by `sections/03_equilibrium.tex`. They are not to be hand-edited.
+Generated values come from repository source and must not be hand-edited. Any repaired-`R+` annotation added in Stage 10 must be sourced from the frozen registers or verification scripts rather than manual arithmetic.
 
-## 8. CI validation
+## 8. CI / local-equivalent gate
 
-Full Stage-9 reproducibility workflow run `34663574054` passed:
+The repaired Stage-8 closeout already established that the rebased integrity gate, Python regressions, Lean build, placeholder audit, LaTeX build, generated artifacts, and artifact upload can pass together. Stage-9 closeout requires the same two workflow families to remain green on the Stage-9 head.
 
-- frozen-theory symbolic and robustness checks: PASS;
-- three permanent unit regressions: PASS;
-- freeze/scope integrity gate: PASS;
-- deterministic artifact generation: PASS;
-- LaTeX toolchain install: PASS;
-- manuscript scaffold build: PASS;
-- PDF artifact upload: PASS.
+A green build is infrastructure evidence only; it does not expand the frozen theorem scope.
 
-The existing `verify` workflow separately runs the baseline/robustness checks and the explicit Lean target with the no-`sorry`/`admit` audit. This remains a required independent gate.
+## 9. Provenance locations
 
-## 9. Provenance / decision locations
-
-- Stage-8 freeze: `docs/STAGE_08_THEORY_FREEZE.md`;
-- Stage-9 reproduction instructions: `docs/REPRODUCIBILITY.md`;
-- post-freeze theory changes: `docs/CHANGE_CONTROL.md`;
-- portfolio stage/status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
+- repaired theory freeze: `docs/STAGE_08_THEORY_FREEZE.md`;
+- repaired model/registers: `docs/freeze_repaired/`;
+- change control: `docs/CHANGE_CONTROL.md`;
+- reproducibility guide: `docs/REPRODUCIBILITY.md`;
+- Stage-11B regression provenance: `docs/STAGE_11B_ASTRA_REFEREE_AUDIT.md` and `verification/stage11b_astra_independent_audit.py`;
+- project/status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
 
 ## 10. Remaining blockers
 
-None for Stage 10 section writing. The bibliography is intentionally only a scaffold at Stage 9; source-verified entries must be added as Stage-10 prose is written.
+No reproducibility blocker remains for Stage 10.
+
+The existing pre-repair manuscript section prose is not re-certified by Stage 9 merely because it compiles. Stage 10 must revise the exposition against the repaired freeze before any manuscript-closeout/referee claim can be inherited.
 
 ## 11. Exact Stage-10 writing contract
 
-Stage 10 may write and reorganize exposition only under all of the following constraints:
+Stage 10 is authorized only under all of the following constraints:
 
-1. the Stage-8 theory freeze and linked registers are authoritative;
-2. no player, state, tariff instrument, timing change, equilibrium claim, welfare benchmark, or theorem quantifier may be added or changed without `docs/CHANGE_CONTROL.md` rollback/refreeze;
-3. every theorem/proposition statement must remain within `docs/freeze/PROPOSITION_SCOPE_REGISTER.md` and be traceable to the certificate/verification artifacts;
-4. the regular both-served region `R` and the H-only counterexample must remain visible wherever globality could be misunderstood;
-5. nonquadratic cases remain numerical robustness only, and arbitrary-concave-demand wording is prohibited;
-6. the Lean artifact must be described as proof-critical-core verification only;
-7. the fixed-installed-base welfare wedge must not be promoted to a global endogenous welfare ranking;
-8. numerical manuscript objects must be generated from repository source when feasible rather than hand edited;
-9. literature metadata and institutional facts must be source-verified before citation;
-10. repository verification and manuscript build gates must remain green after writing changes.
+1. `docs/STAGE_08_THEORY_FREEZE.md` and `docs/freeze_repaired/` are authoritative;
+2. the manuscript title is **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**;
+3. the weak-participation convention at zero continuation surplus must be explicit wherever the binding L participation constraint is used;
+4. provider continuation play must be described as global both-served / H-only / no-service comparison, not as an assumed both-served branch;
+5. T1–T3 must be stated only for the quadratic baseline on strict `R+`, with `h_0<h_M<h_F` and the complete candidate interval `[h_0,h_F]` visible where relevant;
+6. the `23/10` H-only counterexample must remain an explicit guard against global/all-positive-parameter wording;
+7. arbitrary strict concavity and non-Uniform-CDF theorem claims are prohibited; common-curvature nonquadratic results are numerical robustness only;
+8. W1 remains fixed-installed-base only; no global endogenous-welfare ranking may be inferred;
+9. Lean/formal verification must be described as proof-critical-core only, with weak participation, full continuation optimization, the complete atomless game, mixed-existence proof, endogenous welfare comparison, and institutional interpretation outside full formal coverage;
+10. all generated numerical objects must come from repository scripts when feasible;
+11. literature metadata and institutional facts must be source-verified before citation;
+12. pre-repair Stage-10 wording has no inherited certification: repaired Stage 10 must independently satisfy scope/integrity/build gates;
+13. any theory change triggers `docs/CHANGE_CONTROL.md` rollback rather than being hidden in exposition;
+14. `verify` and `reproducibility` workflows must remain green at Stage-10 closeout.
 
 ## Final routing
 
-**REPRODUCIBILITY BASELINE READY — GO TO STAGE 10 PAPER BUILD.**
+**REPRODUCIBILITY BASELINE READY — GO TO STAGE 10 PAPER BUILD / REPAIR.**
