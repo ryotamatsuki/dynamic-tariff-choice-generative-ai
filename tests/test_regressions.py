@@ -13,6 +13,7 @@ class FrozenTheoryRegressionTests(unittest.TestCase):
         l = bL / KL
         d = aH - aL
         RF = (aH**2 - aL**2) / 2
+        h0 = bH / KH
         hF = (bH + RF) / KH
         h = sp.symbols("h", positive=True)
         p = c + d * h / (l + h)
@@ -20,7 +21,7 @@ class FrozenTheoryRegressionTests(unittest.TestCase):
         phi = (l + h) / 2 * p**2
         muM = sp.simplify(phi.subs(h, hM))
         muF = sp.simplify(phi.subs(h, hF))
-        self.assertTrue(sp.N(hM) < sp.N(hF))
+        self.assertTrue(sp.N(h0) < sp.N(hM) < sp.N(hF))
         self.assertTrue(sp.N(muM) < sp.N(mu) < sp.N(muF))
 
     def test_permanent_H_only_scope_counterexample(self):
