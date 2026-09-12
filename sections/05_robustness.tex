@@ -1,32 +1,42 @@
 \section{Robustness, Scope, and Verification}\label{sec:robustness}
 
-The baseline uses uniform integration costs and quadratic future utility because these assumptions expose the state-regime feedback analytically. The underlying order logic is broader, but the certified generality is intentionally limited.
+The quadratic-uniform baseline is chosen to expose the architecture-state feedback in closed form. The current theorem package is intentionally narrower than the set of numerical exercises retained in the repository.
 
-\subsection{Beyond the uniform integration-cost benchmark}
+\subsection{What is and is not generalized}
 
-The uniform distribution is not essential to the ordering argument by itself. Let the metered high-use integration map be a continuous map from an installed-state interval into itself. A broader sufficient-condition result survives when three properties hold: the metered integration map is antitone, it has an interior fixed point, and its crossing condition places that fixed point strictly below the flat-induced installed state. Under those explicit conditions the metered state is ordered below the flat state. If, in addition, the provider's gross metering-gain map is strictly increasing in the relevant state, the two self-consistency thresholds are ordered in the same way as in Proposition~\ref{prop:T2}.
+Propositions~\ref{prop:T1}--\ref{prop:T3} are quadratic-baseline theorems on strict $\mathcal R^+$. The abstract order implication
+\[
+ h_M<h_F,\quad \Psi'(h)>0
+ \quad\Longrightarrow\quad
+ \Psi(h_M)<\Psi(h_F)
+\]
+is useful for organizing the mechanism, but it is not a primitive demand theorem. In particular, strict concavity of future utility alone does not guarantee the state ordering $h_M<h_F$. A retained counterexample from the hostile generality audit reverses that ordering. We therefore make no arbitrary-concave-demand claim.
 
-This statement is deliberately conditional. We do not claim that every integration-cost distribution satisfies the required crossing and interiority conditions. Deterministic checks retained in the verification suite confirm the ordering for several smooth CDF specifications, but those examples support the sufficient conditions rather than replace them with an unrestricted theorem.
+Likewise, the pre-repair numerical checks for alternative integration-cost CDFs are not carried into the current certified theorem set. No non-uniform-CDF theorem is asserted in this paper.
 
-\subsection{Nonquadratic future demand}
+\subsection{Nonquadratic numerical robustness}
 
-The quadratic specification in \eqref{eq:utility} provides the exact formula for $p^*(h)$ and the analytic derivative in \eqref{eq:Phi-derivative}. The repository also retains deterministic numerical checks for power-utility variants
+The repository retains deterministic numerical checks for common-curvature power specifications
 \begin{equation}
  v_j(q)=a_jq-\frac{q^r}{r},
  \qquad r\in\{3,4\}.
  \label{eq:power-utility}
 \end{equation}
-For the certified numerical examples, anticipated metering still produces a lower high-use installed state and the computed metering-gain map remains increasing on the tested interval. These exercises are numerical robustness only. They do not establish the result for arbitrary concave demand and are not used to expand the quantifiers of Propositions~\ref{prop:T1}--\ref{prop:T3}.
+For the tested parameterizations, anticipated metering continues to produce a lower high-use installed state and the computed metering-gain map remains increasing over the tested interval. These exercises are \emph{numerical robustness only}. They neither establish a theorem for arbitrary $r$ nor expand the quantifiers of Propositions~\ref{prop:T1}--\ref{prop:T3}.
 
-\subsection{Why the regular-region restriction is substantive}
+\subsection{Why strict $\mathcal R^+$ is substantive}
 
-The both-served continuation need not be globally optimal outside $\mathcal R$. A permanent exact counterexample fixes
+The provider's continuation problem is globally defined at every installed state by equations \eqref{eq:VF-global} and \eqref{eq:VM-global}, but the closed-form headline theorem requires both-served continuation to dominate over the complete candidate interval $[h_0,h_F]$. This is exactly what strict $\mathcal R^+$ certifies.
+
+Outside that domain, the active set can change. A permanent exact counterexample fixes
 \begin{equation}
  a_L=4,\quad a_H=5,\quad c=1,\quad l=0.1,\quad h=0.6.
  \label{eq:scope-counterexample}
 \end{equation}
-At this installed state, the provider's $H$-only flat continuation exceeds the both-served flat continuation in profit by exactly $23/10$. Thus a theorem quantified over all positive installed compositions would be false. The counterexample is retained both as a Python regression test and as a targeted formal arithmetic theorem. Its role is not to characterize all behavior outside $\mathcal R$, but to prevent the regular-branch theorem from being silently generalized.
+At this installed state, the provider's $H$-only flat continuation exceeds the both-served flat continuation by exactly $23/10$. Hence a theorem quantified over all positive installed compositions is false. The counterexample is retained as a regression guard; it is not used to characterize the full equilibrium correspondence outside $\mathcal R^+$.
 
 \subsection{Formal-verification boundary}
 
-A targeted Lean 4 artifact certifies a proof-critical logical and algebraic core: threshold separation from state ordering and monotonicity, the strict-gap implication for pure responses, uniqueness skeletons for antitone fixed points and the mixed-state construction, positivity of the baseline derivative expression, and the exact outside-$\mathcal R$ counterexample. The formal artifact does not encode the complete economic model. In particular, it does not by itself certify the derivation of demand from primitive utility, global tariff optimization across every active set, the full continuum-game equilibrium correspondence, or the welfare accounting in Section~\ref{sec:welfare}. Those objects remain established by the analytic and computational audit of the economic model.
+A targeted Lean 4 artifact certifies a proof-critical logical and algebraic core, including threshold ordering from state ordering and monotonicity, fixed-point uniqueness skeletons, strict-gap response reversal, positivity of the baseline derivative expression, repaired state-ordering components, the fixed-installed-base welfare identity, and the exact $23/10$ arithmetic scope guard.
+
+The formal artifact does not encode the complete economic model. In particular, weak participation at zero surplus, the provider's complete active-set optimization, the atomless integration game, the full existence proof for the mixed equilibrium, endogenous welfare comparisons, and institutional interpretation are not fully formalized. Those claims are supported by the analytic derivations, independent direct-payoff audit, and regression suite rather than by Lean alone.
