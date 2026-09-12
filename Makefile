@@ -9,6 +9,7 @@ verify: verify-python verify-lean
 verify-python:
 	$(PYTHON) verification/baseline_checks.py
 	$(PYTHON) verification/robustness_checks.py
+	$(PYTHON) verification/stage4a_repair_independent.py
 	$(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) scripts/check_integrity.py
 
