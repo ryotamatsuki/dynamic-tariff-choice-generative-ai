@@ -1,74 +1,64 @@
 # Current theorem / scope certificate
 
-Stage 7.5A status: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**.
+Stage 4A: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**.  
+Stage 7.5A: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**.  
+Formal Verification Gate: **FORMAL VERIFICATION PASS**.  
+Stage 8: **THEORY FROZEN — GO TO REPRODUCIBILITY SETUP**.
 
-Formal Verification Gate: **FORMAL VERIFICATION PASS**.
+Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
-Stage 8: **THEORY FROZEN**. Stage 9: **REPRODUCIBILITY BASELINE READY**. Stage 10 paper construction is authorized; theorem scope remains unchanged from the Stage-8 freeze.
+## T1
 
-## T1 — Metered integration ordering
+For every parameter vector in strict repaired region `R+`, the metered rational-expectations fixed point exists uniquely and satisfies
 
-**Baseline statement.** On the Stage-4A-certified regular both-served region `R`, the metered rational-expectations fixed point exists uniquely and satisfies `0 < h_M < h_F`.
+`h_0<h_M<h_F`.
 
-- Construction proof: PASS
-- Independent Stage-4A attack: PASS
-- Scope: branch-specific, not global
-- Generalization: a broader state-order result is available under explicit antitone/interiority/crossing conditions; not asserted for arbitrary CDF/rent systems.
+Maturity: PROVED. Formal coverage: PROOF-CRITICAL CORE. Quadratic baseline only.
 
-Maximum wording: “On a regular both-served region, anticipated metering induces a strictly smaller high-use installed state than anticipated flat pricing.”
+## T2
 
-Prohibited wording: “Metering always reduces integration for all positive parameters.”
+For every parameter vector in strict `R+`,
 
-## T2 — Threshold separation
+`mu_M=Phi(l,h_M)<Phi(l,h_F)=mu_F`.
 
-**Baseline statement.** On `R`, `mu_M < mu_F`.
+Maturity: PROVED. Formal coverage: PROOF-CRITICAL CORE.
 
-**Sufficient-condition statement.** If `h_M < h_F` and gross metering gain `Psi(h)` is strictly increasing, then `Psi(h_M) < Psi(h_F)`.
+The abstract ordered-state plus increasing-gain implication is only an organizing sufficient-condition lemma, not an arbitrary-concavity theorem.
 
-- Baseline analytic proof: PASS
-- Stage-4A attack: PASS
-- Abstract order-theoretic implication: PASS analytically
-- Targeted Lean theorem: PASS (`threshold_separation`)
+## T3
 
-Maximum wording: “Architecture-sensitive integration can split a static tariff threshold when metering induces a lower installed high-use state and metering gain rises with that state.”
+For every parameter vector in strict `R+` and every `mu` satisfying `mu_M<mu<mu_F`, neither pure flat nor pure metered expectation is self-consistent. The certified branch has a unique aggregate mixed resolution.
 
-Prohibited wording: “All concave demand systems exhibit threshold separation.”
+Maturity: PROVED. Formal coverage: PROOF-CRITICAL CORE. Equality thresholds and outside-`R+` global characterization are excluded.
 
-## T3 — Pure-regime gap
+## B1
 
-**Baseline statement.** On strict `R`, if `mu_M < mu < mu_F`, neither pure flat nor pure metered expectation is self-consistent; the regular branch has a unique mixed resolution.
+Architecture-insensitive integration implies `h_M=h_F`, hence `mu_M=mu_F` and threshold collapse.
 
-- Candidate-deviation audit: PASS
-- Alternative-equilibrium audit on the strict regular branch: PASS
-- Boundary equality cases excluded
-- Outside-`R` global characterization not claimed
-- Lean strict-gap response implication: PASS
-- Lean conditional mixed-state uniqueness skeleton: PASS
+Maturity: PROVED.
 
-Abstract sufficient-condition wording may state only the no-pure-regime implication from ordered thresholds. Uniqueness of a mixed resolution additionally requires a continuous strictly monotone installed-state response to the provider's mixing probability.
+## W1
 
-## W1 — Fixed-installed-base welfare wedge
+Holding installed `(l,h)` fixed on the quadratic both-served branch,
 
-Holding `(l,h)` fixed on the baseline both-served branch,
+`mu_P-mu_W=d h p*(h)>0`.
 
-`mu_P - mu_W = d h p*(h) > 0`.
+Maturity: PROVED. Formal coverage: PROOF-CRITICAL CORE. This is not a global endogenous-welfare theorem.
 
-This is a fixed-allocation benchmark, not a global endogenous-welfare theorem.
+## Generality and robustness ceiling
 
-Maximum wording: “Holding the installed base fixed, the monopolist meters over a larger activation-cost region than a social evaluator comparing the same decentralized allocations.”
+Common-curvature nonquadratic survival is numerical robustness only. Arbitrary strict concavity is not a valid general theorem. No non-Uniform integration-cost CDF theorem is in the repaired certified claim set.
 
-Prohibited wording: “Metering is always socially excessive.”
+## Permanent scope guard
 
-## Permanent scope counterexample
-
-At `a_L=4`, `a_H=5`, `c=1`, `l=0.1`, `h=0.6`, H-only flat pricing beats the both-served flat continuation by exactly `23/10` in provider profit. Any theorem statement quantified over all positive installed compositions is therefore false.
-
-The exact arithmetic difference is independently retained in Python regression code and in Lean theorem `hOnly_scope_counterexample`.
+At `a_L=4,a_H=5,c=1,l=0.1,h=0.6`, H-only flat pricing exceeds both-served flat pricing by exactly `23/10`. Any all-positive-parameter/global-installed-composition formulation is prohibited.
 
 ## Formal-verification state
 
-**FORMAL VERIFICATION PASS.**
+Canonical certificate: `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`.
 
-Successful CI build: workflow run `34660791188`, target `DynamicTariffFormal`, Lean 4.33.1 / mathlib v4.33.1. The build reports only standard logical/library axioms (`propext`, `Classical.choice`, `Quot.sound`) for the formal targets and the no-`sorry`/`admit` audit passes.
+Verified repaired build source `d6ac2a4bca0bf10dbfea23b274951d15b39d8551`, workflow run `34678945920`, Lean 4.33.1 / mathlib v4.33.1. Formal coverage is targeted proof-critical logic only, not the complete game/equilibrium correspondence.
 
-The formalization boundary and statement-fidelity limits are recorded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md`.
+## Routing
+
+Stage 9 must be rerun/rebased on the repaired Stage-8 freeze before manuscript/referee work resumes. Pre-repair Stage-9/10 artifacts are historical until that rerun.
