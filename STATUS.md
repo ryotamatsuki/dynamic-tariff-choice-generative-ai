@@ -14,8 +14,10 @@ The repaired theory is frozen, the reproducibility baseline is ready, and the re
 - Stage 10: **FULL DRAFT READY FOR REFEREE GATE**
 
 Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
+Stage-10 manuscript closeout head before this administrative status commit: `8ac2b2e11ccb3be05f5401ddd63697f752b0b5d0`.
+Closeout workflows on that head: verify run `34682186377` PASS (Python, manuscript scope gate, Lean, placeholder audit); reproducibility run `34682186323` PASS (integrity/regressions, generated artifacts, LaTeX build, PDF upload).
 
-Current canonical records include:
+Canonical current records include:
 
 - `docs/STAGE_08_THEORY_FREEZE.md`
 - `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
