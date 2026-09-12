@@ -1,6 +1,6 @@
 # Project status
 
-The repaired theory is now **FROZEN**.
+The repaired theory is frozen and the reproducibility baseline has been rebased.
 
 - Stage 4R repair: PASS
 - repeated Stage 4A: GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS
@@ -9,25 +9,24 @@ The repaired theory is now **FROZEN**.
 - Stage 7.5: GO
 - Stage 7.5A: GO — GENERALITY / QUANTIFIER CERTIFICATION PASS
 - Formal Verification Gate: FORMAL VERIFICATION PASS
-- Stage 8: **THEORY FROZEN — GO TO REPRODUCIBILITY SETUP**
+- Stage 8: THEORY FROZEN
+- Stage 9: **REPRODUCIBILITY BASELINE READY**
 
 Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
-Current canonical records:
+Canonical current records include:
 
 - `docs/STAGE_08_THEORY_FREEZE.md`
-- `docs/freeze_repaired/MODEL_REGISTER.md`
-- `docs/freeze_repaired/PROPOSITION_SCOPE_REGISTER.md`
-- `docs/freeze_repaired/WELFARE_BENCHMARK_REGISTER.md`
-- `docs/freeze_repaired/VERIFICATION_REGISTER.md`
-- `docs/freeze_repaired/CONTRIBUTION_REGISTER.md`
+- `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
+- `docs/REPRODUCIBILITY_REPAIRED.md`
+- `docs/freeze_repaired/`
 - `theorem_certificates/current_scope.md`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
 
 Frozen headline scope: T1–T3 are quadratic-baseline theorems on strict `R+`; arbitrary strict concavity is not a valid general theorem; nonquadratic survival is numerical robustness only; no non-Uniform-CDF theorem is in the current claim set; W1 is fixed-installed-base only.
 
-The earlier Stage-8 freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d`, the old `docs/freeze/` records, and the pre-repair Stage-9/10 artifacts are historical.
+The earlier freeze and pre-repair Stage-9/10 certification are historical. Existing manuscript prose is only a technical starting scaffold until repaired Stage 10 is completed.
 
-Next authorized action: **rerun/rebase Stage 9 — Reproducibility Setup on the repaired freeze**. Manuscript/referee work resumes only after that downstream gate.
+Next authorized action: **Stage 10 — Paper Build / Repair against the repaired freeze**.
 
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
