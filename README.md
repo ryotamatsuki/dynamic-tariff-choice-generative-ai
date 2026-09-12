@@ -47,7 +47,7 @@ Generality remains narrow. A Stage-11B strictly concave counterexample reverses 
 - `verification/stage7_repaired_verify.py`
 - `docs/STAGE_11B_ASTRA_REFEREE_AUDIT.md`
 
-The standard verification workflow and local `make verify` path include the repaired Stage-7 welfare checks.
+The standard verification workflow and local `make verify` path include the repaired Stage-7 welfare checks. The Stage-7 verifier uses only the repository's existing SymPy dependency plus an internal bisection routine.
 
 The previous Stage-8 freeze and Stage-10 manuscript remain in the repository as historical artifacts. They must not be treated as current certification until Stage 7.5, Stage 7.5A and Stage 8 are rerun.
 
