@@ -8,257 +8,187 @@ Canonical workflow: `ryotamatsuki/research-paper-workflow` v2.1
 
 **GO — GO TO WELFARE / GENERALITY.**
 
-The Stage-4R / repeated Stage-4A repair changes game-definition completeness and theorem scope from the superseded regular region to strict `R+`, but it does not create a new mechanism. The Stage-6 question is therefore whether the repaired full-game result is absorbed by prior work once the strongest Stage-11B novelty threats are reopened.
+The Stage-4R / repeated Stage-4A repair changes game-definition completeness and narrows theorem scope to strict `R+`; it does not create a new mechanism. Reopening the strongest prior-art threats therefore tests whether the repaired **full-game result**, rather than its ingredients, survives.
 
-The answer remains **no, but narrowly**.
+It does, but narrowly.
 
-The following are not novel and remain permanently killed as contribution claims:
+Permanently killed as standalone novelty:
 
 - generic hold-up from sunk integration/investment followed by later monopoly pricing;
-- generic dynamic commitment problems in subscription/adoption;
+- generic lack of commitment / dynamic adoption effects;
 - fixed-fee versus usage-based pricing;
-- two-part tariffs or hybrid tariffs;
-- positive metering/transaction/servicing costs;
-- the mere existence of mixed architecture/business-model equilibrium;
-- AI, cloud, or GenAI as an application label;
-- endogenous quality or inference cost by themselves.
+- two-part / hybrid tariffs;
+- positive metering, inference, transaction, or servicing costs;
+- mixed pricing/business-model equilibrium by itself;
+- AI/cloud/GenAI as a new application domain;
+- endogenous quality or costly inference by itself;
+- generic private/social tariff wedges;
+- the order implication `h_M<h_F` plus increasing `Psi` implies threshold ordering as a deep theorem.
 
 The surviving contribution is the **reciprocal architecture–state feedback**:
 
-> anticipated future tariff architecture changes the sunk installed high-use state, and that same installed state changes the provider's ex-post profitability of the future architecture. This turns a single fixed-state architecture-switching threshold into two expectation-contingent self-consistency thresholds. On strict `R+`, `mu_M<mu_F`; for `mu_M<mu<mu_F`, neither pure architecture is self-consistent. If integration is architecture-insensitive, the two thresholds collapse.
+> anticipated future tariff architecture changes the sunk installed high-use state, and that installed state changes the provider's later relative gain from the same architecture. A single fixed-state switching threshold therefore becomes two expectation-contingent self-consistency thresholds. On strict `R+`, `mu_M<mu_F`; for `mu_M<mu<mu_F`, neither pure architecture is self-consistent. Architecture-insensitive integration collapses the two thresholds back to one.
 
 This is the only headline novelty route authorized for Stage 7.
 
 ## 2. Canonical repaired input
 
-Stage-6 re-kill is run on the repaired object certified in:
+Stage 6 is run on:
 
 - `docs/STAGE_04R_REPAIR.md`;
 - `docs/STAGE_04A_RECERTIFICATION.md`;
 - `theorem_certificates/stage4a_repair_certificates.md`;
 - `verification/stage4a_repair_independent.py`.
 
-The repaired result set is:
+Repaired result set:
 
 - **T1:** on strict `R+`, `h_0<h_M<h_F`;
 - **T2:** on strict `R+`, `mu_M<mu_F`;
 - **T3:** if `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified regular branch has a unique aggregate mixed resolution;
-- **B1:** if integration is architecture-insensitive, `h_M=h_F` and the two thresholds collapse.
+- **B1:** architecture-insensitive integration implies `h_M=h_F` and threshold collapse.
 
-The old Stage-8 freeze remains stale until the downstream reruns and refreeze are completed.
+The prior Stage-8 freeze and downstream manuscript/certificates remain stale until the mandated reruns and refreeze.
 
 ## 3. Proposition-by-proposition novelty classification
 
-| Result | Novelty status | Reason |
+| Result | Stage-6 classification | Reason |
 |---|---|---|
-| T1 `h_M<h_F` | **NOT standalone novelty** | Anticipated future pricing changing sunk adoption/integration is already a standard hold-up / dynamic-pricing effect. |
-| T2 `mu_M<mu_F` | **SURVIVES only as interaction theorem** | Novelty is not monotonicity itself but the endogenously different installed states at which the same architecture comparison is evaluated. |
-| T3 pure-regime gap | **SURVIVES, subordinate headline result** | The no-pure-regime interval follows from the separated self-consistency thresholds; mixed equilibrium per se is not novel. |
-| Unique mixed resolution | **KILLED as standalone novelty** | Mixed pricing/business-model equilibria are already present in adjacent pricing/business-model literatures. |
-| B1 threshold collapse under architecture-insensitive integration | **SURVIVES as identification benchmark, not standalone theorem novelty** | It isolates the reciprocal state feedback by recovering a single fixed-state threshold. |
-| AI/cloud interpretation | **NOT novelty** | Current LLM/cloud pricing literature already studies costly inference, two-part tariffs, committed spend, quality, and heterogeneous use. |
+| T1 `h_M<h_F` | **Not standalone novelty** | Future pricing affecting sunk participation/investment is established in hold-up and dynamic-pricing literatures. |
+| T2 `mu_M<mu_F` | **Survives only as interaction theorem** | Novelty is the architecture-specific endogenous state at which the same ex-post architecture comparison is evaluated. |
+| T3 pure-regime gap | **Survives as consequence of T2** | The intermediate no-pure-regime interval is not generated by hold-up or business-model choice alone. |
+| Unique mixed resolution | **Killed as standalone novelty** | Mixed pricing/business-model equilibria already exist in adjacent literatures. |
+| B1 threshold collapse | **Identification benchmark** | It isolates the source of threshold splitting rather than constituting a separate headline novelty claim. |
+| AI/cloud interpretation | **Not novelty** | Current LLM/cloud literature already studies costly usage, heterogeneous demand, two-part tariffs, commitment, and quality. |
 
-## 4. Search log and strongest prior-art threats
+## 4. Reopened closest-paper matrix
 
-### Sundararajan (2004), *Nonlinear Pricing of Information Goods*
+| Prior work | Direct overlap | Whole-game absorption? | Stage-6 implication |
+|---|---|---|---|
+| Sundararajan (2004), *Nonlinear Pricing of Information Goods* | fixed/unlimited vs usage pricing, nonlinear pricing, transaction cost | **No** | kills static tariff-form / metering-cost novelty |
+| Gans (2012), *Mobile Application Pricing* | sunk platform access before later pricing; anticipation/unravelling | **No, strong timing predecessor** | kills generic future-pricing / sunk-adoption novelty |
+| Muthers & Wismer (2022), *Why Do Platforms Charge Proportional Fees? Commitment and Seller Participation* | sunk seller participation, hold-up, tariff form as commitment | **No, strongest tariff-form threat** | kills “tariff form changes hold-up” novelty |
+| Penmetsa, Gal-Or & May (2015), *Dynamic Pricing of New Services in Subscription Markets* | forward-looking adoption, commitment, dynamic pricing regimes | **No** | kills generic dynamic-subscription / commitment novelty |
+| Ladas, Kavadias & Loch (2022), *Product Selling vs. Pay-Per-Use Service* | strategic selling vs PPU business-model choice | **No** | kills selling-vs-usage and mixed-business-model novelty |
+| Wang & Hu (2014), *Committed Versus Contingent Pricing Under Competition* | strategic commitment vs contingent pricing; unique mixed equilibrium can arise | **No** | independently kills mixed pricing-regime equilibrium novelty |
+| Min & Ryu (2025), *Price Discrimination, Two-Part Tariff, and Hold-Up* | sunk downstream investment followed by monopolistic two-part tariff | **No, close on timing** | kills generic sunk-investment / later two-part-tariff novelty |
+| Bergemann, Bonatti & Smolin (2025), *The Economics of Large Language Models* | LLM token use, heterogeneous tasks, operating costs, two-part-tariff implementation | **No** | kills LLM/two-part/costly-token novelty |
+| Bergemann & Wang (2025), *Optimal Pricing of Cloud Services: Committed Spend under Demand Uncertainty* | dynamic cloud demand, two-part tariff, committed-spend implementation | **No** | kills cloud commitment / contracting novelty |
+| Wu, Jin & Liu (2024), *Bundling Variety, Usage, or Both?* | subscription, pay-per-use, nonlinear pricing with multi-unit demand | **No** | kills broad subscription-vs-usage pricing novelty |
+| Bhaskaran, Erat & Mukherjee (2026), *Pay More, Use More* | costly digital services including AI/cloud; subscription; two-part-tariff extension | **No** | kills AI/cloud servicing-cost/two-part novelty |
+| Bichuch & Yaish (2026), *Freemium Is All You Need* | GenAI, costly compute, pricing, endogenous future quality | **No** | kills GenAI/costly-inference/future-quality novelty |
 
-Source: Management Science 50(12), 1660–1673, DOI `10.1287/mnsc.1040.0291`.
+### Strongest model-level distinction: Muthers & Wismer
 
-Direct overlap: unlimited/fixed-fee versus usage-based pricing, nonlinear pricing, and transaction costs of usage pricing.
+Muthers–Wismer is the strongest conceptual threat because one strategic model contains tariff form, sunk seller participation, and hold-up. But its timing differs in the critical way. The intermediary sets the tariff in stage 1, sellers decide whether to join in stage 2, and the intermediary later decides market entry. The tariff can therefore serve as an **ex-ante commitment device** affecting later entry incentives.
 
-Absorption test: **NO**. The model is static screening/pricing. It does not contain sunk integration before later architecture choice, architecture-dependent installed states, or two self-consistency thresholds generated by feeding the installed state back into the same architecture decision.
+The repaired model instead has users sink relationship-specific integration **before** the provider chooses future tariff architecture. Expectations over that later architecture alter installed composition; installed composition then changes the provider's ex-post relative profitability of the architecture itself. This reciprocal state feedback is not the Muthers–Wismer mechanism.
 
-### Gans (2012), *Mobile Application Pricing*
+### Strongest timing predecessor: Gans
 
-Source: Information Economics and Policy 24(1), 52–59, DOI `10.1016/j.infoecopol.2012.01.006`.
+Gans has prior platform/device access followed by later application pricing, so it directly contains the first arrow `future pricing expectations -> sunk access/adoption`. It does not supply the second arrow `installed composition -> later tariff-architecture profitability` or the two architecture-specific self-consistency thresholds.
 
-Direct overlap: platform/device access is sunk before later application pricing; users anticipate future pricing; lack of commitment produces hold-up/unravelling.
+### Strongest recent sunk-investment/two-part predecessor: Min & Ryu
 
-Absorption test: **NO, but this is a very strong conceptual predecessor.** Mapping sunk AI integration to prior platform access reproduces the first arrow `future pricing expectation -> sunk adoption`. It does not reproduce the second arrow `installed composition -> later tariff-architecture profitability`, nor the resulting pair `(mu_M,mu_F)` of architecture-specific self-consistency thresholds.
+Min–Ryu has downstream firms sink investment before a monopolistic supplier offers discriminatory two-part tariffs. This is close enough to eliminate any generic “sunk integration followed by two-part pricing” novelty. Their reported result concerns investment hold-up and price-discrimination policy, not an endogenous architecture state feeding back into the provider's later architecture choice.
 
-### Muthers & Wismer (2022), *Why Do Platforms Charge Proportional Fees? Commitment and Seller Participation*
+### Mixed-equilibrium predecessor: Wang & Hu
 
-Source: Review of Network Economics 21(2), 83–110, DOI `10.1515/rne-2023-0020`.
-
-Direct overlap: sunk seller participation, hold-up, tariff form as commitment technology.
-
-Absorption test: **NO; strongest tariff-form threat.** Their tariff form changes the platform's incentive to compete with sellers and hence participation. The repaired paper must therefore never claim novelty for “tariff form solves/creates hold-up.” The surviving result is narrower: expectations over the provider's own later architecture alter the installed state, which feeds back into the relative profitability of that same architecture and splits a fixed-state switching threshold into two self-consistency thresholds.
-
-### Penmetsa, Gal-Or & May (2015), *Dynamic Pricing of New Services in Subscription Markets*
-
-Source: Production and Operations Management 24(6), 896–916, DOI `10.1111/poms.12317`.
-
-Direct overlap: forward-looking adoption, dynamic pricing regimes, commitment and time inconsistency.
-
-Absorption test: **NO.** Their comparison turns on history-based versus time-based price discrimination and adoption incentives; it does not establish an architecture-state-architecture feedback producing two self-consistency thresholds around one static architecture switch.
-
-### Ladas, Kavadias & Loch (2022), *Product Selling vs. Pay-Per-Use Service*
-
-Source: Management Science 68(7), 4964–4982, DOI `10.1287/mnsc.2021.4125`.
-
-Direct overlap: selling versus pay-per-use business models and equilibrium architecture choice.
-
-Absorption test: **NO.** This is a business-model competition result with production/delivery costs. It is sufficient to kill any claim that a mixed architecture equilibrium or a selling-versus-usage choice is itself novel. It does not contain sunk pre-architecture integration whose architecture-sensitive installed state feeds back into the provider's later architecture incentive.
-
-### Min & Ryu (2025), *Price Discrimination, Two-Part Tariff, and Hold-Up*
-
-Source: The Manchester School 93(6), 558–568, DOI `10.1111/manc.70001`.
-
-Direct overlap: firms sink investment before a monopolistic supplier offers two-part tariffs; post-investment rent extraction causes hold-up.
-
-Absorption test: **NO, but close on timing.** This directly kills generic “sunk investment before later two-part tariff” novelty. It compares discriminatory and uniform two-part tariffs and obtains investment/non-investment results; it does not derive a state-dependent ex-post architecture-profit comparison whose threshold depends on the architecture expectation through the installed state.
-
-### Bergemann, Bonatti & Smolin (2025), *The Economics of Large Language Models: Token Allocation, Fine-Tuning, and Optimal Pricing*
-
-Source: Cowles Foundation Discussion Paper 2425.
-
-Direct overlap: LLM variable operating costs, heterogeneous tasks/users, fine-tuning, token consumption, and implementation by menus of two-part tariffs.
-
-Absorption test: **NO.** It kills any claim that LLM-specific costly usage, heterogeneity, token allocation, or two-part tariffs are novel. The economic problem is optimal mechanism/product design, not ex-post tariff-architecture choice after relationship-specific sunk integration with reciprocal state feedback.
-
-### Bergemann & Wang (2025), *Optimal Pricing of Cloud Services: Committed Spend under Demand Uncertainty*
-
-Source: Cowles Foundation Discussion Paper 2424 / arXiv:2502.08022.
-
-Direct overlap: dynamic cloud demand, two-part tariffs, committed-spend contracts and commitment costs.
-
-Absorption test: **NO.** It is a dynamic screening/contracting problem under demand uncertainty. It does not establish the repaired paper's threshold-splitting mechanism.
-
-### Hu, Qin, Wang & Zhang (working paper, revised 2025), *Subscription vs. Spot Pricing in On-Demand Economy*
-
-Source: SSRN 4662398.
-
-Direct overlap: subscription versus contingent per-use pricing, platform demand/participation, and two-part-tariff comparison.
-
-Absorption test: **NO.** The key strategic margin is real-time congestion/service-level control, not sunk integration followed by a later architecture choice whose profitability depends on the installed task composition. The previously ambiguous shorthand “Wang & Hu” is not used; the identified paper is by **Hu, Qin, Wang & Zhang**.
-
-### Bhaskaran, Erat & Mukherjee (2026), *Pay More, Use More: Consumer Bias and Demand Management for Digital Services*
-
-Source: Production and Operations Management, OnlineFirst, DOI `10.1177/10591478261454768`.
-
-Direct overlap: digital services including AI/cloud, positive servicing costs, subscriptions, demand management and a two-part-tariff extension.
-
-Absorption test: **NO.** Its mechanism is mental-accounting/consumer-bias-driven consumption management; it does not contain the reciprocal architecture-state feedback.
-
-### Bichuch & Yaish (2026), *Freemium Is All You Need*
-
-Source: arXiv:2608.00823 / SSRN 7217279.
-
-Direct overlap: GenAI, costly compute, pricing and endogenous future quality.
-
-Absorption test: **NO.** It strengthens the conclusion that GenAI, inference cost and future quality cannot carry novelty by themselves. Its free/paid-quality dynamics do not yield the same sunk-integration/architecture self-consistency game.
+The previously ambiguous shorthand is resolved as Zizhuo Wang and Ming Hu (2014), *Committed Versus Contingent Pricing Under Competition*, Production and Operations Management 23(11):1919–1936, DOI `10.1111/poms.12202`. Their model can have a unique mixed equilibrium between committed and contingent pricing under competition. Hence the present paper must not sell “a mixed pricing-regime equilibrium exists” as novel. Their mixed equilibrium is driven by competition, capacity, and demand uncertainty, not by architecture-sensitive sunk integration splitting a single fixed-state threshold.
 
 ## 5. Whole-game absorption verdict
 
 **NOT ABSORBED BY A SINGLE IDENTIFIED PRIOR MODEL.**
 
-The strongest partial reconstruction is:
+The closest papers separately establish important ingredients:
 
-- Gans / Min–Ryu / Muthers–Wismer supply the first strategic margin: sunk participation or investment is distorted by anticipated post-investment pricing or tariff incentives;
-- Sundararajan / Ladas–Kavadias–Loch / Hu–Qin–Wang–Zhang supply fixed versus usage/spot architecture comparisons;
-- current LLM/cloud papers supply costly usage, heterogeneous tasks, two-part tariffs and modern institutional motivation.
+- Gans, Min–Ryu, and Muthers–Wismer: sunk participation/investment distorted by later pricing or conduct;
+- Sundararajan, Ladas–Kavadias–Loch, Wang–Hu, and Wu–Jin–Liu: fixed/usage, committed/contingent, or PPU architecture choice and sometimes mixed regimes;
+- Bergemann–Bonatti–Smolin, Bergemann–Wang, Bhaskaran–Erat–Mukherjee, and Bichuch–Yaish: the modern LLM/cloud pricing frontier.
 
-But combining citations component-by-component is not itself an absorption proof. The identified papers do not, individually, reproduce the full feedback
+Component-by-component overlap is not sufficient for absorption under the Stage-6 protocol. No identified single prior model reproduces the full feedback
 
 `architecture expectation -> installed high-use state -> profitability of that same architecture -> architecture choice`
 
-or the resulting theorem that one fixed-state switch becomes two self-consistency thresholds with an intermediate no-pure-regime interval.
+and the resulting theorem that a single fixed-state architecture threshold becomes two self-consistency thresholds with a strict intermediate no-pure-regime interval.
 
-Accordingly, novelty survives only at the **interaction-result** level.
+Novelty therefore survives only at the **interaction-result** level.
 
-## 6. Nested-benchmark comparison
+## 6. Nested-benchmark result comparison
 
-| Result | Fixed/exogenous installed state | Hold-up/adoption without state-dependent architecture profit | Full repaired model | Prior-art status |
+| Result | Architecture-insensitive / fixed installed state | Hold-up/adoption alone | Full repaired model | Prior-art status |
 |---|---:|---:|---:|---|
-| Architecture-sensitive installed states `h_M != h_F` | No | Often yes in analogous investment/adoption form | Yes | Ingredient known |
-| State-dependent metering gain `Psi(h)` | Yes/possible | Not sufficient | Yes | Ingredient not enough for novelty |
-| Two architecture-specific thresholds | No: one threshold | Not implied | `mu_M<mu_F` on `R+` | **Survives** |
-| Strict interval with neither pure architecture self-consistent | No | Not implied by hold-up alone | Yes | **Survives as consequence** |
-| Threshold collapse when integration is architecture-insensitive | Single threshold by construction | N/A | Recovered as B1 | Identification benchmark |
-| Mixed equilibrium | May occur in other pricing/business-model games | Possible | Yes | Standalone novelty killed |
+| Architecture-sensitive installed states `h_M != h_F` | No | analogous effects known | Yes | ingredient known |
+| State-dependent architecture gain `Psi(h)` | possible | not sufficient | Yes | ingredient, not headline novelty |
+| Two architecture-specific thresholds | one threshold | not implied | `mu_M<mu_F` on `R+` | **survives** |
+| Strict no-pure-regime interval | No | not implied | Yes | **survives as consequence** |
+| Threshold collapse with architecture-insensitive integration | single threshold by construction | N/A | recovered as B1 | identification benchmark |
+| Mixed equilibrium | known elsewhere | possible | Yes | standalone novelty killed |
 
-The economically relevant full-model-only row is the **threshold splitting / pure-regime gap** generated by reciprocal architecture-state feedback.
+The full-model-only row is **threshold splitting / pure-regime gap generated by reciprocal architecture-state feedback**.
 
-## 7. Killed claims — permanent Stage-6 record
+## 7. Killed claims
 
 Do not claim novelty for:
 
 1. future pricing reducing sunk integration/investment;
-2. lack of commitment or hold-up in digital/platform markets;
-3. fixed-fee versus usage-based pricing;
+2. generic lack of commitment or hold-up;
+3. fixed-fee versus usage pricing;
 4. two-part or hybrid tariffs;
 5. positive inference/servicing/metering costs;
 6. AI/cloud/GenAI pricing as a new domain;
-7. quality increasing demand or usage;
+7. model-quality improvement or quality increasing usage by itself;
 8. mixed pricing/business-model equilibrium;
-9. a generic monopolist-versus-social tariff wedge;
-10. the abstract order implication `h_M<h_F` plus increasing `Psi` implies `Psi(h_M)<Psi(h_F)` as an independent deep theorem.
+9. generic monopoly/social tariff wedges;
+10. the abstract monotone-order lemma as an independent deep theorem.
 
-## 8. Surviving claim set
-
-Stage 7 is authorized to interpret only the following novelty set:
+## 8. Surviving contribution set
 
 ### C1 — reciprocal architecture-state feedback
-
-Expected tariff architecture affects sunk integration and therefore the installed high-use state; the installed state in turn changes the provider's later relative gain from metering.
+Expected tariff architecture changes sunk installed high-use composition, and installed composition changes the provider's later relative gain from the same architecture.
 
 ### C2 — expectation-contingent threshold separation
-
-On repaired strict `R+`, the feedback creates two distinct self-consistency thresholds:
-
-`mu_M=Phi(l,h_M)<Phi(l,h_F)=mu_F`.
+On strict `R+`, the reciprocal feedback yields `mu_M=Phi(l,h_M)<Phi(l,h_F)=mu_F`.
 
 ### C3 — pure-regime gap
-
 For `mu_M<mu<mu_F`, neither pure flat nor pure metered architecture is self-consistent on the certified branch.
 
-### C4 — identification by threshold collapse
-
-When integration is architecture-insensitive, `h_M=h_F` and the two thresholds collapse to the single fixed-state architecture threshold. This benchmark is evidence that the threshold split comes from the reciprocal feedback rather than from the mere presence of an activation cost.
-
-The mixed equilibrium is a resolution of C3, not a separate novelty claim.
+### C4 — threshold-collapse identification benchmark
+If integration is architecture-insensitive, `h_M=h_F` and the thresholds collapse. The mixed equilibrium resolves C3 but is not itself a novelty claim.
 
 ## 9. Revised contribution statement
 
-**Authorized wording:**
+Authorized wording:
 
 > When users make sunk relationship-specific integration decisions before a provider can revise future tariff architecture, anticipated architecture can change the installed composition on which the provider later evaluates that same architecture. If metering induces a lower high-use installed state and the provider's relative gain from metering rises with that state, a single fixed-state switching threshold separates into two expectation-contingent self-consistency thresholds. In the strict interval between them, neither pure architecture is self-consistent. With architecture-insensitive integration, the thresholds collapse.
 
-**Do not broaden this to:**
+Do not broaden this to arbitrary concave demand, all positive parameters, a generic hold-up result, a generic mixed-equilibrium contribution, an empirical claim that enterprise AI necessarily exhibits the feedback, or a claim that model-quality improvement is required for the main theorem.
 
-- a generic hold-up theorem;
-- arbitrary concave demand;
-- all positive parameter values;
-- a generic mixed-equilibrium contribution;
-- a claim that enterprise AI empirically exhibits this feedback;
-- a claim that model-quality improvement is required for the main theorem.
+## 10. Repair ratification
 
-## 10. Strongest remaining novelty threat
+The Stage-4R repair does not manufacture novelty:
 
-The strongest single conceptual threat remains **Muthers & Wismer (2022)** because it combines sunk participation, hold-up and tariff form as commitment within one strategic model. **Gans (2012)** is the strongest timing/anticipation predecessor because sunk platform access occurs before future application pricing. **Min & Ryu (2025)** is the strongest recent sunk-investment/two-part-tariff predecessor.
+- zero-surplus participation is a game-completeness convention;
+- global off-path active-set completion is a certification repair;
+- strict `R+` narrows the domain;
+- the new explicit ordering `h_0<h_M<h_F` sharpens scope but does not add a strategic margin.
 
-None of the three, on the evidence reviewed, directly establishes the repaired paper's reciprocal installed-state feedback and two self-consistency thresholds. This distinction must be made proposition-by-proposition in the manuscript; application differences are insufficient.
+Thus the pre-repair Stage-6 conclusion is substantively ratified on the repaired object.
 
-## 11. Repair ratification
+## 11. Strongest remaining novelty threat
 
-The Stage-4R repair does not improve novelty artificially:
+**Muthers & Wismer (2022)** remains the strongest single conceptual threat because it combines tariff form, sunk participation, and hold-up in one model. **Gans (2012)** is the strongest timing predecessor. **Min & Ryu (2025)** is the strongest recent sunk-investment/two-part-tariff predecessor. **Wang & Hu (2014)** is an important warning that mixed pricing-regime equilibrium itself is prior art.
 
-- zero-surplus participation is a game-completeness convention, not a new mechanism;
-- global off-path active-set completion is a certification repair, not a new strategic margin;
-- replacing the old regular region with strict `R+` narrows the theorem domain rather than creating a result;
-- T1–T3 economic content is unchanged except for the strengthened scope and explicit `h_0` ordering.
-
-Therefore the pre-repair Stage-6 novelty conclusion is substantively ratified on the repaired object, subject to the narrower wording above.
+The paper must distinguish itself proposition-by-proposition through the reciprocal state feedback and threshold split; application differences are insufficient.
 
 ## 12. Canonical verdict and next-stage contract
 
 **GO — GO TO WELFARE / GENERALITY.**
 
-Stage 7 must be rerun on the repaired `R+` model. It may not revive any killed novelty claim. In particular:
+Stage 7 must be rerun on repaired strict `R+` and may interpret only C1–C4. It may not revive killed novelty claims. In particular:
 
-- welfare must distinguish first best, fixed-installed-base comparisons and endogenous-integration comparisons;
-- any generality statement must respect the Stage-11B concave-demand counterexample and the strict `R+` active-set restriction;
-- institutional evidence may motivate the timing and tariff menu but may not be used as evidence that the reciprocal feedback occurs empirically;
-- the abstract threshold-order implication should be presented as an organizing sufficient-condition lemma, not as the main source of economic novelty.
+- welfare must separate true first best, fixed-installed-base comparisons, and endogenous-integration comparisons;
+- generality must respect the Stage-11B concave-demand counterexample and strict `R+` active-set restriction;
+- institutional evidence may motivate timing and tariff menus but may not be presented as evidence that the reciprocal feedback occurs empirically;
+- the abstract threshold-order implication is an organizing sufficient-condition lemma, not the principal economic novelty.
 
-The prior Stage-7, Stage-7.5, Stage-7.5A and Stage-8 records remain stale until rerun.
+The prior Stage-7, Stage-7.5, Stage-7.5A, Stage-8, and Stage-10 records remain stale until rerun/refreeze.
