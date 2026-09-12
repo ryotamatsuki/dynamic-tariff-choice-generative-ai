@@ -47,19 +47,17 @@ Generality remains narrow. A Stage-11B strictly concave counterexample reverses 
 - `verification/stage7_repaired_verify.py`
 - `docs/STAGE_11B_ASTRA_REFEREE_AUDIT.md`
 
+The standard verification workflow and local `make verify` path include the repaired Stage-7 welfare checks.
+
 The previous Stage-8 freeze and Stage-10 manuscript remain in the repository as historical artifacts. They must not be treated as current certification until Stage 7.5, Stage 7.5A and Stage 8 are rerun.
 
 ## Reproduce
 
-With Python and Lean/Lake installed, the repaired verification path includes:
+With Python and Lean/Lake installed:
 
 ```bash
 python -m pip install -r requirements-dev.txt
-python verification/stage4a_repair_independent.py
-python verification/stage7_repaired_verify.py
-lake update
-lake exe cache get
-lake build DynamicTariffFormal
+make verify
 ```
 
 The existing Lean artifact remains useful for its conditional algebraic core, but the prior economic statement-fidelity certificate is stale until the repaired model passes Stage 7.5A again.
