@@ -1,10 +1,10 @@
 # Project status
 
-The repaired theory is frozen, the reproducibility baseline is ready, the repaired full draft is complete, and the repaired full manuscript has passed the independent referee-attack gate.
+The repaired theory remains frozen and the full draft has now received an additional independent Astra cross-check. That cross-check returned **PASS WITH MATERIAL RESERVATIONS / REPAIR WITHIN STAGE 11**. Mathematical and manuscript repairs have been implemented on `repair/stage11-astra-reservations`, but the Stage-11 gate is not yet re-ratified because one fail-closed prior-art source limitation remains.
 
 - Stage 4R repair: PASS
 - repeated Stage 4A: GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS
-- Stage 6: GO
+- Stage 6: prior GO, subject to the current Stage-11 Hagiu re-kill
 - Stage 7: GO
 - Stage 7.5: GO
 - Stage 7.5A: GO — GENERALITY / QUANTIFIER CERTIFICATION PASS
@@ -12,35 +12,38 @@ The repaired theory is frozen, the reproducibility baseline is ready, the repair
 - Stage 8: THEORY FROZEN
 - Stage 9: **REPRODUCIBILITY BASELINE READY**
 - Stage 10: **FULL DRAFT READY FOR REFEREE GATE**
-- Stage 11: **GO — REFEREE ATTACK GATE PASS**
+- Historical Stage 11 closeout: **GO — REFEREE ATTACK GATE PASS**
+- Current Astra Stage 11 recheck: **REPAIR WITHIN STAGE 11 — STAGE 12 PAUSED**
 
-Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
-Stage-10 manuscript closeout head: `8ac2b2e11ccb3be05f5401ddd63697f752b0b5d0`.
-Stage-10 closeout workflows: verify run `34682186377` PASS; reproducibility run `34682186323` PASS.
+Audit target / repair base: `b85f386f458ed394d0df9b0f2af5b1de02c27d59`.
+Current repair branch: `repair/stage11-astra-reservations`.
 
-Canonical repaired Stage-11 audit branch: `audit/stage11-repaired-independent`.
-Stage-11 audit head: `f07d7c39a79b9b7144024d220380812b40d2aad1`.
-Stage-11 closeout workflows on that head: verify push run `34693026544` PASS (Python including the independent Stage-11 attack, repaired Stage-4A/Stage-7 checks, manuscript scope gate; Lean build and placeholder audit); reproducibility push run `34693026560` PASS (integrity/regressions, generated artifacts, LaTeX build, PDF upload).
-Stage-11 audit was merged through PR #1; merge commit: `399d8952004365379705f2fbc9304368c1f98d6c`.
+## Implemented Astra repairs
 
-Canonical current records include:
+1. Pure-equilibrium boundaries corrected: metered is self-consistent for `mu<=mu_M`; flat is self-consistent for `mu>=mu_F`. At the equality endpoints aggregate consistency forces `rho=1` and `rho=0`, respectively.
+2. Appendix globality proof closed from primitives: optimal fixed fees, all active sets, price boundaries, negative fixed fees, the exact square-loss identity, optimized H-only continuation, and endpoint propagation are explicit.
+3. Candidate-state completeness is derived before applying the certified interval: `l=b_L/K_L` and `h in [h_0,h_F]` follow from globally optimal continuation rents, including provider mixtures.
+4. The interior mixed equilibrium is constructed as actual provider randomization between the two globally optimal tariffs, with explicit user integration cutoffs, aggregation, atomless deviations, and off-path continuation.
+5. AI positioning is narrowed: the formal primitives are not AI-specific; GenAI is a motivating application. The current LLM citation is updated to the March-2026 revision of TSE WP 25-1670.
+6. A fresh prior-art matrix is stored in `docs/STAGE_11_ASTRA_REPAIR_PRIOR_ART.md`.
+7. Additive independent checks are stored in `verification/stage11_astra_repair_verify.py` and wired into local/CI verification. Historical audit records are left intact.
 
-- `docs/STAGE_08_THEORY_FREEZE.md`
-- `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
-- `docs/STAGE_10_PAPER_BUILD_REPAIRED.md`
-- `docs/STAGE_10_FIGURE_TABLE_ARCHITECTURE.md`
-- `docs/STAGE_11_REFEREE_ATTACK_REPAIRED.md`
-- `verification/stage11_repaired_independent.py`
-- `docs/freeze_repaired/`
-- `theorem_certificates/current_scope.md`
-- `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
+## Unresolved item
 
-The active manuscript title is **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**. T1–T3 remain quadratic-baseline theorems on strict `R+`; arbitrary strict concavity and non-Uniform-CDF theorems are not claimed; W1 remains fixed-installed-base only; Lean remains proof-critical-core verification only.
+Hagiu (2006), *Pricing and Commitment by Two-Sided Platforms*, remains the strongest prior-art source check. The publisher abstract and a complete 60-page public predecessor were inspected. They establish a close sequential commitment/participation/pricing model and therefore kill novelty for the generic expectation--participation--repricing sequence. The complete published RAND version of record could not be retrieved in the current environment. Under the explicit repair instruction, that source-access limitation remains unresolved rather than being treated as evidence of non-absorption.
 
-Stage 11 found no fatal mathematical attack and no Stage-4A/Stage-7.5A certification regression. A heterogeneous-curvature strict-concavity counterexample is retained permanently as a guard against future generality inflation. Weak participation at zero surplus remains an explicit tie-breaking primitive; no strict-participation equivalence theorem is claimed. The surviving novelty claim remains only the reciprocal architecture-state feedback and resulting expectation-contingent threshold split.
+If the complete published text reveals the same specific reciprocal loop
 
-The historical pre-repair `audit/stage11b-astra-independent` branch remains provenance only and has no inherited authority over the repaired manuscript.
+`anticipated tariff architecture -> sunk installed composition -> relative architecture profitability -> ex-post architecture choice`
 
-Next authorized action: **Stage 12 — Journal Positioning**.
+and the corresponding two-threshold/interior-mixing result, the earliest affected stage is **Stage 6**. Otherwise the repaired Stage-11 gate can be re-ratified without changing T1--T3.
 
-Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
+## Theory/formal scope
+
+No primitive, timing, strategy space, strict `R+` domain, T1--T3 statement, B1, or W1 has been changed. The equality repair characterizes the pure boundary equilibria around T3; it does not broaden T3's strict middle-interval quantifier. No new Lean theorem was created. Lean remains proof-critical-core verification only.
+
+## Routing
+
+**Remain in Stage 11 repair. Stage 12 is not currently authorized.**
+
+Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30` should mirror this paused routing until the Hagiu source limitation is closed.
