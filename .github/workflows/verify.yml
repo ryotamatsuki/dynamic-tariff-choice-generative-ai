@@ -24,6 +24,8 @@ jobs:
         run: python verification/robustness_checks.py
       - name: Repaired Stage 4A independent audit
         run: python verification/stage4a_repair_independent.py
+      - name: Repaired Stage 7 welfare checks
+        run: python verification/stage7_repaired_verify.py
 
   lean:
     runs-on: ubuntu-latest
