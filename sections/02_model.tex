@@ -2,39 +2,37 @@
 
 \subsection{Users, integration, and future usage}
 
-A monopoly provider faces two classes of potential enterprise task integrations, $j\in\{L,H\}$. Each class has unit potential mass. A task of class $j$ draws a sunk integration cost $k$ independently from a uniform distribution on $[0,K_j]$, with $K_j>0$. If it integrates, it receives a current benefit $b_j>0$ before any future repricing. This benefit is realized before the provider's later tariff decision and cannot be expropriated by that decision.
+A monopoly provider faces two classes of potential enterprise task integrations, $j\in\{L,H\}$. Each class has unit potential mass. A task of class $j$ draws a sunk integration cost $k$ independently from a uniform distribution on $[0,K_j]$, with $K_j>0$. If it integrates, it receives a current benefit $b_j>0$ before any future repricing. This benefit is non-expropriable by the later tariff decision.
 
 Future gross value from usage $q\geq0$ is
 \begin{equation}
  v_j(q)=a_jq-\frac{q^2}{2},
  \label{eq:utility}
 \end{equation}
-where
+with
 \begin{equation}
  0<c<a_L<a_H,
  \qquad d\equiv a_H-a_L>0.
  \label{eq:primitive-order}
 \end{equation}
-The provider incurs real inference cost $cq$. The two classes therefore differ in their future value of AI usage, with class $H$ the high-use class.
-
-The provider posts a common two-part tariff
+The provider incurs real inference cost $cq$. The provider posts an anonymous two-part tariff
 \begin{equation}
  T(q)=F+pq.
  \label{eq:tariff}
 \end{equation}
-The \emph{flat architecture} sets $p=0$. The \emph{metered/hybrid architecture} sets $p>0$ and incurs a real activation cost $\mu\geq0$. Within either architecture the provider chooses the feasible tariff parameters globally. The baseline does not allow discriminatory menus across classes, arbitrary nonlinear tariffs, competition, congestion, capacity choice, or an intermediary layer.
+The \emph{flat architecture} sets $p=0$. The \emph{metered/hybrid architecture} sets $p>0$ and incurs a real activation cost $\mu\geq0$. The baseline excludes discriminatory menus, arbitrary nonlinear tariffs, competition, congestion, and endogenous model investment.
 
-Conditional on participation under tariff $(F,p)$, type $j$ chooses
+Conditional on participation, type $j$ chooses
 \begin{equation}
  q_j(p)=\max\{a_j-p,0\},
  \label{eq:demand}
 \end{equation}
-and its indirect gross surplus before the fixed fee is
+with gross surplus before the fixed fee
 \begin{equation}
- S_j(p)=\frac{(a_j-p)^2}{2}
+ S_j(p)=\frac{\max\{a_j-p,0\}^2}{2}.
  \label{eq:indirect-surplus}
 \end{equation}
-whenever $p<a_j$. Participation is voluntary.
+Future participation obeys weak individual rationality: a task participates if and only if continuation utility is weakly nonnegative, and a task with exactly zero continuation surplus participates. This convention matters because the provider will bind the low-use participation constraint on the both-served branch.
 
 \subsection{Timing and equilibrium concept}
 
@@ -42,27 +40,71 @@ The timing is:
 \begin{enumerate}
  \item potential tasks simultaneously decide whether to incur their sunk integration costs;
  \item integrated tasks receive the current benefits $b_j$;
- \item the provider observes the installed masses $(l,h)$;
- \item the provider chooses the future tariff architecture and then the tariff parameters permitted by that architecture;
+ \item the provider observes installed masses $(l,h)$;
+ \item the provider chooses the future tariff architecture and tariff parameters permitted by that architecture;
  \item integrated tasks choose future participation and usage.
 \end{enumerate}
 
-Users are forward-looking and atomless. A single task's integration decision does not change the aggregate installed state or the provider's continuation choice. Equilibrium therefore combines rational expectations at the integration stage with subgame-perfect continuation optimization by the provider. If the provider mixes between architectures, users take the aggregate mixing probability as given when deciding whether to integrate.
+Users are forward-looking and atomless. The exact integration-cutoff type is indifferent and has measure zero under the uniform distribution. Equilibrium combines rational expectations at the integration stage with globally optimal continuation play by the provider at every installed state. If the provider mixes between architectures, users take the aggregate mixing probability as given when deciding whether to integrate.
 
-\subsection{The regular both-served region}
+\subsection{Global provider continuation}
 
-The headline results are not global over all positive parameters. They are stated on a certified regular region $\mathcal R$ in which the economically relevant continuation branch serves both classes under the globally optimal tariff within each architecture. Define the flat-price rent difference
+Since $S_H(p)\geq S_L(p)$ for all $p$, an anonymous tariff can generate only three relevant participation regimes: both classes served, only $H$ served, or no service. A tariff that serves $L$ while excluding installed $H$ is impossible.
+
+Under flat pricing, the provider's globally optimized continuation value is
 \begin{equation}
- R_F\equiv S_H(0)-S_L(0)=\frac{a_H^2-a_L^2}{2}.
- \label{eq:RF}
+ V_F(l,h)=\max\{\Pi_F^B(l,h),\Pi_F^H(h),0\},
+ \label{eq:VF-global}
 \end{equation}
-The region $\mathcal R$ imposes the following restrictions:
+where
 \begin{align}
- &K_L,K_H>0, \qquad l\equiv \frac{b_L}{K_L}\in(0,1),
- \label{eq:R1}\\
- &dc<b_H+R_F<K_H,
- \label{eq:R2}
+ \Pi_F^B(l,h)&=(l+h)\frac{a_L^2}{2}-c(la_L+ha_H),
+ \label{eq:flat-both-profit}\\
+ \Pi_F^H(h)&=h\frac{a_H^2}{2}-cha_H.
+ \label{eq:flat-H-profit}
 \end{align}
-together with two substantive continuation conditions: the relevant interior metered price remains below $a_L$, and on the full installed-state interval used by the equilibrium construction the globally optimal flat and metered continuations both serve $L$ and $H$ rather than switching to an $H$-only or no-service active set.
+Under metering, both-served profit at a candidate marginal price $0<p\leq a_L$ is
+\begin{equation}
+ \Pi_M^B(p\mid l,h)
+ =(l+h)\frac{(a_L-p)^2}{2}
+ +(p-c)\{l(a_L-p)+h(a_H-p)\},
+ \label{eq:metered-profit}
+\end{equation}
+whereas the optimized $H$-only metered continuation earns
+\begin{equation}
+ \Pi_M^H(h)=h\frac{(a_H-c)^2}{2}.
+ \label{eq:metered-H-profit}
+\end{equation}
+Thus
+\begin{equation}
+ V_M(l,h)=\max\left\{\max_{0<p\leq a_L}\Pi_M^B(p\mid l,h),\Pi_M^H(h),0\right\}.
+ \label{eq:VM-global}
+\end{equation}
+The provider compares $V_F(l,h)$ with $V_M(l,h)-\mu$; equality permits mixing. Hence continuation play is defined even off the both-served equilibrium branch.
 
-The last condition is essential. It permits closed-form analysis of the regular branch but is not innocuous. Section~\ref{sec:robustness} retains an exact outside-$\mathcal R$ counterexample showing why the global-all-parameters formulation is false. Equality cases at the architecture thresholds are also excluded from the strict headline theorem because the provider is indifferent there.
+\subsection{The strict repaired region $\mathcal R^+$}
+
+The headline theorems are not global over all positive parameters. Define
+\begin{equation}
+ R_F\equiv\frac{a_H^2-a_L^2}{2},
+ \qquad
+ l\equiv\frac{b_L}{K_L},
+ \qquad
+ h_0\equiv\frac{b_H}{K_H},
+ \qquad
+ h_F\equiv\frac{b_H+R_F}{K_H}.
+ \label{eq:state-definitions}
+\end{equation}
+Every rational-expectations candidate high-use mass lies in the complete interval $[h_0,h_F]$.
+
+The strict region $\mathcal R^+$ imposes:
+\begin{align}
+ &0<c<a_L<a_H,\qquad K_L,K_H,b_L,b_H>0,\label{eq:Rplus1}\\
+ &l\in(0,1),\label{eq:Rplus2}\\
+ &dc<b_H+R_F<K_H,\label{eq:Rplus3}\\
+ &c+d\frac{h_F}{l+h_F}<a_L,\label{eq:Rplus4}\\
+ &\Pi_F^B(l,h_0)>0,\qquad \Pi_F^B(l,h_F)>0,\label{eq:Rplus5}\\
+ &\Pi_F^B(l,h_F)>\Pi_F^H(h_F),\label{eq:Rplus6}\\
+ &\Pi_M^B\!\left(c+d\frac{h_F}{l+h_F}\mid l,h_F\right)>\Pi_M^H(h_F).\label{eq:Rplus7}
+\end{align}
+The repaired global-deviation audit shows that these strict endpoint conditions deliver both-served dominance throughout the complete candidate interval $[h_0,h_F]$. They do not imply that both-served pricing is globally optimal at arbitrary installed states. Section~\ref{sec:robustness} retains an exact $H$-only counterexample outside $\mathcal R^+$ for that reason.
