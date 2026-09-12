@@ -29,6 +29,8 @@ Stage 7.5 also confirms that strict `R+` and the failure of arbitrary-concavity 
 
 Recommended next manuscript title after repaired theory is refrozen: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**. The old “Model Improvement” wording is not supported by the headline theorem.
 
+Journal positioning after repair: **IJIO remains a plausible but demanding first target; JIE is not the preferred target at the current scope.** The main publication risk is perceived narrowness, not an unresolved mathematical defect inside the certified claim set.
+
 The old Stage-8 freeze, prior Stage-7.5/7.5A certificates, and Stage-10 manuscript remain **stale for routing purposes**.
 
 Next authorized action: **Stage 7.5A — Generality / Quantifier Red-Team and renewed formal-fidelity gate**. A new Stage-8 freeze remains blocked until Stage 7.5A passes.
