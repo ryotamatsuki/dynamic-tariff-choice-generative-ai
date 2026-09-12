@@ -4,7 +4,7 @@ Current theory freeze: repaired Stage 8 declaration commit `c9e43c99d9deb56bad52
 
 Canonical current records are `docs/STAGE_08_THEORY_FREEZE.md`, `docs/freeze_repaired/`, `theorem_certificates/current_scope.md`, and `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`.
 
-The earlier freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d`, the old `docs/freeze/` records, old formal certificate, and pre-repair Stage-9/10 artifacts are historical only.
+The earlier freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d`, the old `docs/freeze/` records, old formal certificate, and pre-repair Stage-9/10 certification are historical only.
 
 Any substantive change must record what changed, why, affected equations/propositions/quantifiers, continuation or active-set effects, welfare benchmarks, verification, formal theorem statements, contribution wording, and stages to rerun.
 
@@ -22,4 +22,4 @@ Pure notation cleanup, typo repair, citation maintenance, CI/path maintenance, a
 
 Stage-11B certification-regression provenance remains recorded in `docs/STAGE_04R_REPAIR.md` and `docs/STAGE_04A_RECERTIFICATION.md`. The repaired model specifies weak future participation at zero surplus, global provider continuation play, and strict `R+` over the complete candidate interval `[h_0,h_F]`.
 
-After this refreeze, Stage 9 reproducibility setup must be rerun/rebased before manuscript/referee work resumes.
+Stage 9 has now been rerun/rebased on the repaired freeze. Stage 10 may proceed only under `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`; pre-repair manuscript wording is not automatically re-certified.
