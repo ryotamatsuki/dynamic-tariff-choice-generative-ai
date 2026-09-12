@@ -136,3 +136,8 @@ print("Stage 7 repaired welfare verification PASS")
 print("positive R+ welfare threshold:", pos["mu_commit_social"])
 print("negative R+ welfare threshold:", neg["mu_commit_social"])
 print("baseline h0,hM,hF:", baseline["h0"], baseline["hM"], baseline["hF"])
+
+# Stage 7.5A is a scope gate rather than a new mechanism stage. Importing this
+# dedicated audit makes the existing CI Python gate execute its exact symbolic
+# scope checks without changing the project's dependency set.
+import stage075a_scope_verify  # noqa: E402,F401
