@@ -62,6 +62,34 @@ theorem fixedPoint_below_flat_state
   linarith
 
 /--
+Repair-specific lower-state skeleton. If an antitone integration map lies above
+the 45-degree line at the zero-rent installed state h0, every fixed point lies
+strictly above h0.
+-/
+theorem fixedPoint_above_zeroRentState
+    {T : ℝ → ℝ} (hT : Antitone T)
+    {h0 hM : ℝ} (hfix : T hM = hM) (habove : h0 < T h0) :
+    h0 < hM := by
+  by_contra hnot
+  have hle : hM ≤ h0 := le_of_not_gt hnot
+  have hmap : T h0 ≤ T hM := hT hle
+  rw [hfix] at hmap
+  linarith
+
+/--
+Repaired Stage-4R ordering skeleton: an antitone map with a fixed point, an
+above-45-degree crossing at h0, and a below-45-degree crossing at hF places the
+fixed point strictly inside (h0,hF).
+-/
+theorem fixedPoint_between_states
+    {T : ℝ → ℝ} (hT : Antitone T)
+    {h0 hM hF : ℝ} (hfix : T hM = hM)
+    (habove : h0 < T h0) (hbelow : T hF < hF) :
+    h0 < hM ∧ hM < hF := by
+  exact ⟨fixedPoint_above_zeroRentState hT hfix habove,
+    fixedPoint_below_flat_state hT hfix hbelow⟩
+
+/--
 Conditional uniqueness of the mixed installed state: a strictly decreasing state
 response composed with a strictly increasing gross metering-gain map can hit a
 given activation cost at most once.
@@ -91,6 +119,39 @@ theorem baseline_phi_derivative_positive
   positivity
 
 /--
+An endpoint active-set dominance check propagates backward over an interval when
+the rival-minus-preferred profit difference is monotone increasing.
+-/
+theorem endpoint_dominance_propagates
+    {D : ℝ → ℝ} (hD : Monotone D)
+    {h hF : ℝ} (hle : h ≤ hF) (hend : D hF < 0) :
+    D h < 0 := by
+  exact lt_of_le_of_lt (hD hle) hend
+
+/--
+Exact fixed-installed-base welfare identity used at repaired Stage 7. Here pStar
+is the baseline provider-optimal metered usage price. The theorem certifies the
+algebraic wedge, not the economic derivation of either threshold.
+-/
+theorem private_social_wedge_identity
+    {c d l h : ℝ} (hn : l + h ≠ 0) :
+    let pStar : ℝ := c + d * h / (l + h)
+    let μP : ℝ := (l + h) * pStar^2 / 2
+    let μW : ℝ := (l + h) * (c^2 - d^2 * (h / (l + h))^2) / 2
+    μP - μW = d * h * pStar := by
+  dsimp
+  field_simp [hn]
+  ring
+
+/-- Positivity of the repaired Stage-7 fixed-base wedge on the strict branch. -/
+theorem private_social_wedge_positive
+    {c d l h : ℝ}
+    (hc : 0 < c) (hd : 0 < d) (hl : 0 < l) (hh : 0 < h) :
+    0 < d * h * (c + d * h / (l + h)) := by
+  have hden : 0 < l + h := by positivity
+  positivity
+
+/--
 Exact arithmetic scope guard: at the retained out-of-R installed composition,
 H-only flat pricing beats the both-served flat continuation by 23/10.
 -/
@@ -109,8 +170,13 @@ theorem hOnly_scope_counterexample :
 #print axioms strict_gap_reverses_pure_responses
 #print axioms antitone_fixedPoint_unique
 #print axioms fixedPoint_below_flat_state
+#print axioms fixedPoint_above_zeroRentState
+#print axioms fixedPoint_between_states
 #print axioms mixed_state_unique
 #print axioms baseline_phi_derivative_positive
+#print axioms endpoint_dominance_propagates
+#print axioms private_social_wedge_identity
+#print axioms private_social_wedge_positive
 #print axioms hOnly_scope_counterexample
 
 end DynamicTariffFormal
