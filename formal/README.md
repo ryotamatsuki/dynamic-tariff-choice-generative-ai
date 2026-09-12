@@ -1,31 +1,42 @@
 # Formal verification boundary
 
-This directory contains a **proof-critical core**, not a formalization of the complete economic model.
+This directory contains a **targeted proof-critical core**, not a formalization of the complete economic model.
+
+## Current canonical certificate
+
+`formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
+
+Current state: **FORMAL VERIFICATION PASS**.
 
 ## Toolchain
 
 - Lean 4: pinned by `lean-toolchain`
 - mathlib: pinned in `lakefile.lean`
-- Build: `lake update && lake exe cache get && lake build`
+- build: `lake update && lake exe cache get && lake build DynamicTariffFormal`
 
-## Claim mapping
+## Current claim mapping
 
-| Paper claim | Lean theorem | What is certified | What remains outside the formal model |
+| Economic object | Lean theorem(s) | What is certified | What remains outside |
 |---|---|---|---|
-| T2 threshold separation | `threshold_separation` | strict state ordering + strictly increasing gain imply ordered thresholds | derivation of `h_M<h_F` and construction of provider payoff from primitives |
-| T3 strict gap | `strict_gap_reverses_pure_responses` | costs between the two gains imply opposite ex-post pure responses | complete continuum-game equilibrium definition and active-set economics |
-| General-CDF uniqueness skeleton | `antitone_fixedPoint_unique` | antitone map has at most one fixed point | proof that a particular CDF/rent system generates that antitone map |
-| General-CDF state order skeleton | `fixedPoint_below_flat_state` | fixed point lies below flat state under antitone/crossing conditions | economic derivation of those conditions |
-| Mixed resolution uniqueness skeleton | `mixed_state_unique` | strictly decreasing installed state plus increasing gain gives at most one mixed state | existence, probability bounds, and full strategy-space characterization |
-| Baseline monotonicity algebra | `baseline_phi_derivative_positive` | positivity of the exact derivative expression under sign assumptions | derivation of that derivative from provider profit |
-| Out-of-R scope guard | `hOnly_scope_counterexample` | exact arithmetic H-only profit advantage in the retained counterexample | claim that this exhausts all possible outside-R failures |
+| T1 repaired ordering | `fixedPoint_above_zeroRentState`, `fixedPoint_below_flat_state`, `fixedPoint_between_states`, `antitone_fixedPoint_unique` | repaired fixed-point order/uniqueness skeleton | derivation of the economic integration map and active-set optimization |
+| T2 threshold separation | `threshold_separation`, `baseline_phi_derivative_positive` | state ordering plus increasing gain imply threshold ordering; derivative-expression positivity | derivation of `Phi` from full provider profit |
+| T3 strict gap | `strict_gap_reverses_pure_responses`, `mixed_state_unique` | opposite pure responses and conditional mixed-state uniqueness | mixed existence, probability bounds, complete equilibrium correspondence |
+| strict `R+` endpoint logic | `endpoint_dominance_propagates` | endpoint dominance propagation under monotonicity | economic derivation of monotonicity and global continuation optimization |
+| W1 fixed-base wedge | `private_social_wedge_identity`, `private_social_wedge_positive` | exact algebraic identity and sign | planner interpretation and endogenous welfare |
+| outside-`R+` scope guard | `hOnly_scope_counterexample` | exact `23/10` H-only advantage | exhaustive outside-domain characterization |
+
+## Repaired game boundary
+
+The repaired weak-participation rule — zero continuation surplus participates — is not encoded in Lean. It is part of the economic game definition and is certified in the repaired Stage-4R/4A records.
+
+The proof assistant also does not formalize primitive demand derivation, the complete provider continuation problem, the full atomless integration game, alternative-equilibrium enumeration, nonquadratic/non-Uniform generality, or institutional interpretation.
 
 ## Statement-fidelity rule
 
-A theorem of the form `assumptions -> conclusion` certifies only the implication. In particular, Lean does not by itself certify that the model's economic primitives imply the assumptions unless that derivation is also encoded.
+A formal theorem of the form `assumptions -> conclusion` certifies only that implication. It does not establish that the economic primitives imply those assumptions unless that derivation is itself represented.
 
-The manuscript must therefore describe this artifact as targeted formal verification of threshold/order/case logic, not as formal verification of the complete economic model or equilibrium correspondence.
+Accordingly, the formal artifact may be described as targeted verification of repaired proof-critical order/threshold/welfare logic, but not as verification of the complete economic model or equilibrium set.
 
-## Placeholder / axiom policy
+## Dependency / placeholder policy
 
-Certified source must contain no `sorry`, `admit`, or project-specific axioms. The source prints axiom dependencies for each headline formal theorem. Standard mathlib/classical dependencies are not project-specific economic assumptions.
+The formal source contains no proof placeholders in the certified build. Dependency reports are emitted for each certified theorem. The current build reports only standard mathlib/classical dependencies and no project-specific axiom.
