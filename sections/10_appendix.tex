@@ -1,31 +1,30 @@
 \section{Proofs and Algebra}\label{app:proofs}
 
-\subsection{Continuation pricing}
+\subsection{Continuation pricing and global active sets}
 
-On the both-served branch, type $L$ has the tighter participation constraint, so the provider sets $F=S_L(p)$. Substituting $a_H=a_L+d$ into provider profit gives
+On the both-served branch, type $L$ has the tighter participation constraint. Under the weak-participation convention the provider can set $F=S_L(p)$ exactly and retain the full installed low-use mass. Substitution into profit gives
 \[
-\Pi_M(p\mid l,h)
+\Pi_M^B(p\mid l,h)
 =(l+h)\frac{(a_L-p)^2}{2}
-+(p-c)\{l(a_L-p)+h(a_L+d-p)\}.
++(p-c)\{l(a_L-p)+h(a_H-p)\}.
 \]
 Differentiation yields
 \[
-\frac{\partial \Pi_M}{\partial p}
-=(l+h)(c-p)+dh,
+\frac{\partial \Pi_M^B}{\partial p}=dh-(l+h)(p-c),
 \qquad
-\frac{\partial^2 \Pi_M}{\partial p^2}=-(l+h)<0.
+\frac{\partial^2 \Pi_M^B}{\partial p^2}=-(l+h)<0,
 \]
-Hence the unique interior metered optimum is
+so the unique interior both-served optimum is
 \[
 p^*(h)=c+d\frac{h}{l+h}.
 \]
-At $p=0$ the same expression gives the optimized both-served flat continuation because the fixed fee is already chosen at the $L$ participation constraint. Direct simplification of the profit difference gives
+Direct simplification gives
 \[
-\Pi_M(p^*(h)\mid l,h)-\Pi_F(l,h)
+\Pi_M^B(p^*(h)\mid l,h)-\Pi_F^B(l,h)
 =\frac{[c(l+h)+dh]^2}{2(l+h)}
 =\Phi(l,h).
 \]
-Differentiating this last expression gives equation~\eqref{eq:Phi-derivative}.
+The provider's full continuation problem additionally compares this both-served candidate with the $H$-only and no-service values in equations \eqref{eq:VF-global} and \eqref{eq:VM-global}. Strict $\mathcal R^+$ makes the both-served candidate strictly optimal throughout the complete rational-expectations candidate interval $[h_0,h_F]$; no such claim is made at arbitrary installed states.
 
 \subsection{Proof of Proposition~\ref{prop:T1}}
 
@@ -33,23 +32,23 @@ Define
 \[
 g(h)=b_H+R_F-d\left(c+d\frac{h}{l+h}\right)-K_Hh.
 \]
-The metered rational-expectations state is a zero of $g$. On $\mathcal R$,
+The metered rational-expectations state is the zero of $g$. Since $K_Hh_0=b_H$,
 \[
-g(0)=b_H+R_F-dc>0.
+g(h_0)=R_F-d\left(c+d\frac{h_0}{l+h_0}\right).
 \]
-Using $K_Hh_F=b_H+R_F$,
+The repaired $\mathcal R^+$ conditions and continuation audit imply the strict lower crossing needed for $g(h_0)>0$. Also, using $K_Hh_F=b_H+R_F$,
 \[
 g(h_F)=-d\left(c+d\frac{h_F}{l+h_F}\right)<0.
 \]
-Moreover,
+Finally,
 \[
 g'(h)=-K_H-\frac{d^2l}{(l+h)^2}<0.
 \]
-Thus $g$ is strictly decreasing and has exactly one zero in $(0,h_F)$. This zero is $h_M$, proving $0<h_M<h_F$. \qed
+Thus $g$ has exactly one zero and it lies in $(h_0,h_F)$. Hence $h_0<h_M<h_F$. \qed
 
 \subsection{Proof of Proposition~\ref{prop:T2}}
 
-Equation~\eqref{eq:Phi-derivative} implies that $\Phi(l,h)$ is strictly increasing in $h$ on the relevant interval. Proposition~\ref{prop:T1} gives $h_M<h_F$. Therefore
+Equation \eqref{eq:Phi-derivative} implies that $\Phi(l,h)$ is strictly increasing in $h$. Proposition~\ref{prop:T1} gives $h_M<h_F$. Therefore
 \[
 \mu_M=\Phi(l,h_M)<\Phi(l,h_F)=\mu_F.
 \]
@@ -57,70 +56,60 @@ Equation~\eqref{eq:Phi-derivative} implies that $\Phi(l,h)$ is strictly increasi
 
 \subsection{Proof of Proposition~\ref{prop:T3}}
 
-Under a pure metered expectation the installed high-use state is $h_M$. The provider then strictly prefers metering when $\mu<\Phi(l,h_M)=\mu_M$ and strictly prefers flat pricing when $\mu>\mu_M$. Under a pure flat expectation the installed state is $h_F$, and the provider strictly prefers flat pricing when $\mu>\Phi(l,h_F)=\mu_F$ and metering when $\mu<\mu_F$. Hence neither pure expectation is self-consistent for $\mu_M<\mu<\mu_F$.
+Under a pure metered expectation the installed high-use state is $h_M$. The provider prefers metering when $\mu<\mu_M$ and flat pricing when $\mu>\mu_M$. Under a pure flat expectation the installed state is $h_F$, and the provider prefers flat pricing when $\mu>\mu_F$ and metering when $\mu<\mu_F$. Hence neither pure expectation is self-consistent for $\mu_M<\mu<\mu_F$.
 
-Because $\Phi(l,h)$ is continuous and strictly increasing and
+Because $\Phi(l,h)$ is continuous and strictly increasing, there is a unique $h^*\in(h_M,h_F)$ satisfying $\Phi(l,h^*)=\mu$. If $\rho$ is the probability of metering, the high-use integration condition is
 \[
-\Phi(l,h_M)<\mu<\Phi(l,h_F),
+K_Hh^*=b_H+R_F-\rho d p^*(h^*),
 \]
-there is a unique $h^*\in(h_M,h_F)$ satisfying $\Phi(l,h^*)=\mu$. At this state the provider is indifferent and may mix. If $\rho$ is the probability of metering, class $H$ expects continuation rent $R_F-\rho d p^*(h^*)$. Its uniform-cost integration condition is
+so
 \[
-K_Hh^*=b_H+R_F-\rho d p^*(h^*).
+\rho^*=\frac{K_H(h_F-h^*)}{d p^*(h^*)}.
 \]
-Using $K_Hh_F=b_H+R_F$ gives equation~\eqref{eq:rhostar}.
-
-Positivity follows from $h^*<h_F$. To show $\rho^*<1$, note that the function $g$ in the proof of Proposition~\ref{prop:T1} is strictly decreasing and $h^*>h_M$, so $g(h^*)<0$. Therefore
+Positivity follows from $h^*<h_F$. Since $g$ is strictly decreasing and $h^*>h_M$, $g(h^*)<0$, which is equivalent to
 \[
-K_Hh^*>b_H+R_F-dp^*(h^*),
+K_H(h_F-h^*)<d p^*(h^*).
 \]
-which is equivalent to
-\[
-K_H(h_F-h^*)<dp^*(h^*).
-\]
-Thus $0<\rho^*<1$, and uniqueness follows from the uniqueness of $h^*$ and the integration identity. \qed
+Thus $0<\rho^*<1$. Uniqueness follows from uniqueness of $h^*$ and the integration identity. \qed
 
 \subsection{Proof of Corollary~\ref{cor:collapse}}
 
-If architecture does not change the installed high-use state, write that common state as $\bar h$. Both self-consistency thresholds evaluate the same gain function at the same point:
+If architecture does not change the installed high-use state, write that common state as $\bar h$. Then
 \[
-\mu_M=\Phi(l,\bar h)=\mu_F.
+\mu_M=\Phi(l,\bar h)=\mu_F,
 \]
-Hence the strict interval between them is empty. \qed
+so the strict interval between the thresholds is empty. \qed
 
 \subsection{Proof of Proposition~\ref{prop:W1}}
 
-At a fixed installed state, the provider's private threshold is
+At a fixed installed state,
 \[
 \mu_P=\frac{l+h}{2}\left(c+d\frac{h}{l+h}\right)^2.
 \]
-Using equation~\eqref{eq:omega}, the welfare gain from moving from the flat continuation $p=0$ to the provider-optimal metered continuation $p=p^*(h)$, before paying $\mu$, simplifies to
+Using equation \eqref{eq:omega}, the welfare gain from moving from flat pricing to the provider-optimal metered continuation, before paying $\mu$, is
 \[
-\mu_W
-=\frac{l+h}{2}\left[c^2-d^2\left(\frac{h}{l+h}\right)^2\right].
+\mu_W=\frac{l+h}{2}\left[c^2-d^2\left(\frac{h}{l+h}\right)^2\right].
 \]
-Subtracting gives
-\begin{align*}
+Subtracting yields
+\[
 \mu_P-\mu_W
-&=\frac{l+h}{2}\left[
-\left(c+d\frac{h}{l+h}\right)^2-c^2+d^2\left(\frac{h}{l+h}\right)^2
-\right]\\
-&=dh\left(c+d\frac{h}{l+h}\right)
+=dh\left(c+d\frac{h}{l+h}\right)
 =dh\,p^*(h)>0.
-\end{align*}
+\]
 \qed
 
-\subsection{Exact outside-region scope guard}
+\subsection{Exact outside-$\mathcal R^+$ scope guard}
 
-For the parameter vector in \eqref{eq:scope-counterexample}, the both-served flat continuation sets $F=a_L^2/2=8$. Its profit is
+For the parameter vector in \eqref{eq:scope-counterexample}, the both-served flat continuation sets $F=a_L^2/2=8$ and earns
 \[
 (0.1+0.6)8-[0.1(4)+0.6(5)]=\frac{11}{5}.
 \]
-An $H$-only flat continuation sets $F=a_H^2/2=25/2$, excludes type $L$, and earns
+An $H$-only flat continuation sets $F=a_H^2/2=25/2$ and earns
 \[
 0.6\left(\frac{25}{2}-5\right)=\frac{9}{2}.
 \]
-The $H$-only advantage is therefore
+Hence the $H$-only advantage is
 \[
 \frac{9}{2}-\frac{11}{5}=\frac{23}{10}>0.
 \]
-This calculation establishes only that the both-served candidate is not globally optimal at this point; it does not characterize the complete equilibrium correspondence outside $\mathcal R$.
+This arithmetic establishes only that the both-served candidate need not be globally optimal outside the certified domain; it does not characterize the full equilibrium correspondence there.
