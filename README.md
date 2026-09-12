@@ -4,12 +4,11 @@ Theory project on dynamic tariff architecture, sunk AI-specific integration, and
 
 ## Status
 
-**Stage 8 Canonical Theory Freeze completed.**
+**Stage 9 Reproducibility Baseline completed.**
 
-- Stage 7.5A: GO
-- Formal Verification Gate: PASS
 - Stage 8: **THEORY FROZEN**
-- Next stage: **Stage 9 — Reproducibility Setup**
+- Stage 9: **REPRODUCIBILITY BASELINE READY**
+- Next stage: **Stage 10 — Paper Build**
 - Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`
 
 ## Frozen mechanism
@@ -18,9 +17,37 @@ On the certified regular both-served region `R`, anticipated metering induces a 
 
 The broader result is a sufficient-condition theorem, not arbitrary-concave-demand generality.
 
-## Canonical freeze files
+## Reproduce
+
+With Python, Lean/Lake, and LaTeX installed:
+
+```bash
+python -m pip install -r requirements-dev.txt
+lake update
+lake exe cache get
+make all
+```
+
+See `docs/REPRODUCIBILITY.md` for environment and partial-gate details.
+
+## Repository layout
+
+- `paper/`, `sections/` — modular manuscript scaffold
+- `figures/`, `tables/` — deterministically generated manuscript inputs
+- `scripts/` — artifact generation and freeze-integrity gates
+- `tests/` — permanent regression tests
+- `verification/` — symbolic/numerical certification checks
+- `formal/` — Lean proof-critical core and formal certificate
+- `theorem_certificates/` — theorem/scope certificate
+- `references/` — bibliography database
+- `docs/freeze/` — canonical Stage-8 model/scope/welfare/verification/contribution registers
+- `.github/workflows/` — theory/formal and full reproducibility CI
+
+## Canonical records
 
 - `docs/STAGE_08_THEORY_FREEZE.md`
+- `docs/STAGE_09_REPRODUCIBILITY_SETUP.md`
+- `docs/REPRODUCIBILITY.md`
 - `docs/freeze/MODEL_REGISTER.md`
 - `docs/freeze/PROPOSITION_SCOPE_REGISTER.md`
 - `docs/freeze/WELFARE_BENCHMARK_REGISTER.md`
@@ -30,9 +57,9 @@ The broader result is a sufficient-condition theorem, not arbitrary-concave-dema
 - `theorem_certificates/current_scope.md`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE.md`
 
-## Verification
+## Verification boundary
 
-Python regression/robustness checks and the explicit Lean target build run in `.github/workflows/verify.yml`. The Lean certificate covers a proof-critical core only, not the complete economic model or global equilibrium correspondence.
+Python regression/robustness checks, permanent scope-counterexample tests, freeze-integrity checks, deterministic artifact generation, manuscript build, and the explicit Lean target are automated. The Lean certificate covers a proof-critical core only, not the complete economic model or global equilibrium correspondence.
 
 ## Change discipline
 
