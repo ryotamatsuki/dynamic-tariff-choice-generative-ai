@@ -16,7 +16,7 @@ Current canonical repaired-model / downstream records:
 - `docs/STAGE_07_REPAIRED_WELFARE_GENERALITY.md`
 - `verification/stage7_repaired_verify.py`
 
-The standard verification workflow and local `make verify` path now include the repaired Stage-7 welfare checks.
+The standard verification workflow and local `make verify` path include the repaired Stage-7 welfare checks. The first CI attempt exposed a missing SciPy runtime dependency in the new verifier; the verifier was immediately rewritten to use an internal bisection routine so the project did not gain a new dependency. The repaired Stage-7 Python gate passes.
 
 Stage 7 retains a narrow welfare result: at a fixed installed base, the provider's metering threshold exceeds the social threshold by `d h p*(h)>0`. This is not a global endogenous-welfare theorem. The restricted architecture-commitment welfare ranking is sign-indeterminate even within strict `R+`.
 
