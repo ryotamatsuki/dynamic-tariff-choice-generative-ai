@@ -4,7 +4,9 @@ Stage 11B hostile review found a **certification regression** in the previously 
 
 Stage 6 — Novelty Re-Kill / repair ratification: **GO**.
 
-Stage 7 — Welfare / Generality / Institutional Validation: **GO TO STAGE 7.5**.
+Stage 7 — Welfare / Generality / Institutional Validation: **GO**.
+
+Stage 7.5 — Full-Theory Freeze Decision: **GO TO STAGE 7.5A GENERALITY / QUANTIFIER RED-TEAM**.
 
 Current canonical repaired-model / downstream records:
 
@@ -15,17 +17,20 @@ Current canonical repaired-model / downstream records:
 - `docs/STAGE_06_REKILL_REPAIR_RATIFICATION.md`
 - `docs/STAGE_07_REPAIRED_WELFARE_GENERALITY.md`
 - `verification/stage7_repaired_verify.py`
+- `docs/STAGE_075_REPAIRED_FREEZE_DECISION.md`
 
-The standard verification workflow and local `make verify` path include the repaired Stage-7 welfare checks. The first CI attempt exposed a missing SciPy runtime dependency in the new verifier; the verifier was immediately rewritten to use an internal bisection routine so the project did not gain a new dependency. The repaired Stage-7 Python gate passes.
+The Stage-7.5 editorial/value gate finds that the repaired project still warrants a full paper, but only around the narrow reciprocal architecture-state feedback:
 
-Stage 7 retains a narrow welfare result: at a fixed installed base, the provider's metering threshold exceeds the social threshold by `d h p*(h)>0`. This is not a global endogenous-welfare theorem. The restricted architecture-commitment welfare ranking is sign-indeterminate even within strict `R+`.
+`expected architecture -> continuation rent -> sunk integration -> installed high-use state -> relative architecture profitability -> architecture choice`.
 
-Generality remains deliberately narrow. A Stage-11B strictly concave counterexample reverses `h_M<h_F`, so arbitrary-concavity wording is prohibited. The abstract threshold-order result is only an organizing sufficient-condition lemma.
+The exact full-paper result is the splitting of one fixed-state switching threshold into two expectation-contingent self-consistency thresholds on strict `R+`, with a pure-regime gap between them and threshold collapse under architecture-insensitive integration. Generic hold-up, fixed-versus-usage pricing, mixed equilibrium, AI/cloud application novelty, quality improvement, and generic welfare wedges remain killed as standalone contribution claims.
 
-Institutional evidence establishes fixed/seat pricing, flexible credit/token pricing, workflow integration, pay-as-you-go cloud compute, and committed-use/spend contracts. It does not establish the causal feedback from installed integration to later tariff-architecture choice.
+Stage 7.5 also confirms that strict `R+` and the failure of arbitrary-concavity generality must be prominent. The common-curvature nonquadratic result remains numerical robustness only. The fixed-installed-base welfare wedge remains narrow, and endogenous architecture welfare has no unconditional sign.
 
-The old Stage-8 freeze, prior Stage-7/7.5/7.5A certificates, and Stage-10 manuscript remain **stale for routing purposes**.
+Recommended next manuscript title after repaired theory is refrozen: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**. The old “Model Improvement” wording is not supported by the headline theorem.
 
-Next authorized action: **Stage 7.5 — full-paper value / freeze decision**, followed by Stage 7.5A and Stage 8 refreeze if the project remains GO.
+The old Stage-8 freeze, prior Stage-7.5/7.5A certificates, and Stage-10 manuscript remain **stale for routing purposes**.
+
+Next authorized action: **Stage 7.5A — Generality / Quantifier Red-Team and renewed formal-fidelity gate**. A new Stage-8 freeze remains blocked until Stage 7.5A passes.
 
 Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
