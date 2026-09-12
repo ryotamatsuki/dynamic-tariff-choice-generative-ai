@@ -7,13 +7,13 @@ Working research repository for a theory project on dynamic tariff architecture,
 **Pre-freeze candidate project.**
 
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` v2.1
-- Current gate: **Stage 7.5A — Generality / Quantifier Red-Team**
-- Canonical verdict: **CONDITIONAL GO**
-- Single blocking item: **Formal Verification Gate**
-- Stage 8 Canonical Theory Freeze: **NOT YET AUTHORIZED**
+- Current gate: **Stage 7.5A completed**
+- Canonical verdict: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**
+- Formal Verification Gate: **FORMAL VERIFICATION PASS**
+- Stage 8 Canonical Theory Freeze: **AUTHORIZED, NOT YET EXECUTED**
 - Portfolio execution record: `ryotamatsuki/economic-theory-research-portfolio#30`
 
-This repository is the canonical location for the project's mathematical, verification, and formal artifacts from this point forward. The central portfolio Issue remains the stage/status SSOT.
+This repository is the canonical location for the project's mathematical, verification, theorem-certificate, and formal artifacts from this point forward. The central portfolio Issue remains the stage/status SSOT.
 
 ## Research question
 
@@ -29,7 +29,7 @@ On the Stage-4A-certified regular both-served region `R`:
 4. for `mu_M < mu < mu_F`, neither pure flat nor pure metered architecture is self-consistent;
 5. with exogenous or architecture-insensitive integration, `h_M = h_F` and the gap collapses.
 
-Stage 7.5A additionally identifies a broader **sufficient-condition theorem** based on ordered architecture-induced states plus a strictly increasing metering-gain map. This is not a theorem for arbitrary concave demand systems.
+Stage 7.5A also certifies a broader **sufficient-condition theorem** based on ordered architecture-induced states plus a strictly increasing metering-gain map. This is not a theorem for arbitrary concave demand systems.
 
 ## Scope guards
 
@@ -39,9 +39,9 @@ The fixed-installed-base welfare result is also deliberately narrow: the provide
 
 ## Repository layout
 
-- `docs/` — current status, theorem scope, provenance, and stage certificates
+- `docs/` — provenance and workflow records
 - `verification/` — symbolic/numerical regression checks
-- `formal/` — Lean 4 proof-critical core and formalization boundary
+- `formal/` — Lean 4 proof-critical core, formalization boundary, and formal certificate
 - `theorem_certificates/` — theorem/scope certificates
 - `.github/workflows/` — reproducible Python and Lean verification
 
@@ -62,11 +62,11 @@ Lean verification:
 ```bash
 lake update
 lake exe cache get
-lake build
+lake build DynamicTariffFormal
 ```
 
-The Lean toolchain and mathlib release are pinned in `lean-toolchain` and `lakefile.toml`.
+The Lean toolchain and mathlib release are pinned to Lean 4.33.1 / mathlib v4.33.1. The successful formal build and statement-fidelity boundary are recorded in `formal/FORMAL_VERIFICATION_CERTIFICATE.md`.
 
 ## Workflow discipline
 
-No new variables, extensions, applications, contracts, or theorem engineering are authorized while Stage 7.5A remains open. The next admissible action is to close the Formal Verification Gate on the frozen theorem set. Only after Stage 7.5A passes may the project enter Stage 8 Canonical Theory Freeze.
+No new variables, extensions, applications, contracts, or theorem engineering should be introduced before Stage 8 Canonical Theory Freeze. The next canonical action is Stage 8.
