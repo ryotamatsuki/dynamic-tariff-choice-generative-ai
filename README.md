@@ -4,50 +4,43 @@ Theory project on dynamic tariff architecture, sunk AI-specific integration, and
 
 ## Status
 
-**Stage 7.5A passed — Stage 8 Canonical Theory Freeze authorized.**
+**Stage 8 repaired theory freeze completed — THEORY FROZEN / GO TO REPRODUCIBILITY SETUP.**
 
-The post-Stage-11B repair route is complete through the final pre-freeze gate:
+Canonical repaired freeze declaration: `c9e43c99d9deb56bad52637024b9dab7b3673aee`.
 
-- Stage 4R repair: PASS
-- repeated Stage 4A: PASS
-- Stage 6: GO
-- Stage 7: GO
-- Stage 7.5: GO
-- Stage 7.5A: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**
-- Formal Verification Gate: **FORMAL VERIFICATION PASS**
-- Next stage: **Stage 8 — Canonical Theory Freeze**
+The current theorem package is:
 
-Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
+- T1: on strict `R+`, `h_0<h_M<h_F`;
+- T2: on strict `R+`, `mu_M<mu_F`;
+- T3: for `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified branch has a unique aggregate mixed resolution;
+- B1: architecture-insensitive integration collapses the threshold split;
+- W1: holding installed masses fixed, `mu_P-mu_W=d h p*(h)>0`.
 
-## Repaired mechanism
-
-On strict `R+`, every rational-expectations H installed state lies in `[h_0,h_F]`, and both-served flat and metered continuations are strict global active-set optima over that candidate interval. Anticipated metering induces `h_M<h_F`; provider metering gain rises with the installed high-use state; therefore `mu_M<mu_F`. For `mu_M<mu<mu_F`, neither pure architecture is self-consistent and the certified branch has a unique aggregate mixed resolution.
+T1–T3 are quadratic-baseline strict-`R+` results. Arbitrary strict concavity is not a valid general theorem. Common-curvature nonquadratic survival is numerical robustness only. No non-Uniform integration-cost CDF theorem is carried into the repaired freeze. W1 is not a global endogenous-welfare theorem.
 
 The surviving contribution is the reciprocal feedback
 
-`expected architecture -> continuation rent -> sunk integration -> installed high-use state -> relative architecture profitability -> architecture choice`.
+`expected architecture -> continuation rent -> sunk integration -> installed high-use state -> relative architecture profitability -> architecture choice`,
 
-Architecture-insensitive integration collapses the threshold split.
+which splits one fixed-state threshold into two self-consistency thresholds. Generic hold-up, two-part tariffs, mixed equilibrium, AI/cloud application novelty, and quality/model improvement are not claimed as standalone contributions.
 
-## Final pre-freeze scope
+## Canonical freeze records
 
-- T1–T3 are quadratic-baseline results on strict `R+`.
-- The abstract order result is an organizing sufficient-condition lemma.
-- Common-curvature nonquadratic evidence is numerical robustness only.
-- Arbitrary strict concavity is not a valid general theorem.
-- No non-Uniform integration-cost CDF theorem is carried into the repaired freeze.
-- The fixed-installed-base welfare wedge is not a global endogenous-welfare theorem.
-- Institutional evidence motivates tariff diversity and workflow integration but does not establish the model's causal feedback empirically.
-
-Canonical Stage-7.5A records:
-
-- `docs/STAGE_075A_REPAIRED_CERTIFICATION.md`
-- `verification/stage075a_scope_verify.py`
+- `docs/STAGE_08_THEORY_FREEZE.md`
+- `docs/freeze_repaired/MODEL_REGISTER.md`
+- `docs/freeze_repaired/PROPOSITION_SCOPE_REGISTER.md`
+- `docs/freeze_repaired/WELFARE_BENCHMARK_REGISTER.md`
+- `docs/freeze_repaired/VERIFICATION_REGISTER.md`
+- `docs/freeze_repaired/CONTRIBUTION_REGISTER.md`
+- `theorem_certificates/current_scope.md`
 - `formal/FORMAL_VERIFICATION_CERTIFICATE_REPAIRED.md`
-- `formal/DynamicTariffFormal.lean`
 
-The repaired formal build passed on commit `d6ac2a4bca0bf10dbfea23b274951d15b39d8551`, workflow run `34678945920`. Lean certifies a targeted proof-critical core only, not the complete economic game or equilibrium correspondence.
+Formal Verification Gate: **PASS**. The Lean artifact certifies a targeted proof-critical core only, not the complete game/equilibrium correspondence.
 
-Recommended manuscript title after refreeze: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
+The previous freeze based on `2597e82044ec94a58fad033227ea415e64af8c6d` and pre-repair Stage-9/10 artifacts are historical only.
 
-The pre-repair Stage-8 freeze and Stage-10 manuscript remain historical/stale until the new Stage-8 freeze is completed.
+Next authorized action: **rerun/rebase Stage 9 — Reproducibility Setup on the repaired freeze**.
+
+Preferred manuscript title after the downstream reproducibility gate: **Dynamic Tariff Choice for Generative AI: Integration, Commitment, and Welfare**.
+
+Portfolio status SSOT: `ryotamatsuki/economic-theory-research-portfolio#30`.
