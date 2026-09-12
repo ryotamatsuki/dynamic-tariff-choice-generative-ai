@@ -4,7 +4,7 @@ Stage 7.5A status: **GO — GENERALITY / QUANTIFIER CERTIFICATION PASS**.
 
 Formal Verification Gate: **FORMAL VERIFICATION PASS**.
 
-Stage 8 Canonical Theory Freeze is authorized but has not yet been executed.
+Stage 8: **THEORY FROZEN**. Stage 9: **REPRODUCIBILITY BASELINE READY**. Stage 10 paper construction is authorized; theorem scope remains unchanged from the Stage-8 freeze.
 
 ## T1 — Metered integration ordering
 
